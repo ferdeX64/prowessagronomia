@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-class PaginaActu extends StatefulWidget {
-  PaginaActu({Key? key}) : super(key: key);
+class nueva extends StatefulWidget {
+  nueva({Key? key}) : super(key: key);
 
   @override
-  _PaginaActuState createState() => _PaginaActuState();
+  _nuevaState createState() => _nuevaState();
 }
 
-class _PaginaActuState extends State<PaginaActu> {
+class _nuevaState extends State<nueva> {
   @override
   Widget build(BuildContext context) {
     return Container();

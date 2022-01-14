@@ -9,8 +9,13 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(),
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Splash screen"),
+      ),
+      body: const Center(
+        child:Text("Home Page"),
+      ),
     );
   }
 }

@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/homepage.dart';
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
 
@@ -7,6 +10,12 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    
+    super.initState();
+    Timer(const Duration(seconds:5), ()=>Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Homepage())));
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +37,11 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/Logo_ProwessAgronomia.png', height: 123.0, width: 240.0,)
+          , const CircularProgressIndicator(
+              valueColor: AlwaysStoppedAnimation<Color>(Colors.orange)
+            ),
           ],
+          
         ),
       )
     );

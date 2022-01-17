@@ -12,7 +12,18 @@ class _HomepageState extends State<Homepage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          
+          toolbarHeight: 125,
+          backgroundColor: Colors.lightGreenAccent,
+          title: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                  Image.asset('assets/images/Logo_ProwessAgronomia.png',
+                  fit: BoxFit.contain,     
+                  height: 250,
+                  width: 250,
+              ),
+            ],
+          ),
         ),
         drawer: MenuLateral(),
       ),

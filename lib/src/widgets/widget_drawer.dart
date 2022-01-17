@@ -7,7 +7,7 @@ class MenuLateral extends StatelessWidget {
       child: ListView(padding: EdgeInsets.zero, children: [
         DrawerHeader(
             decoration: const BoxDecoration(
-              color: Colors.green,
+              color: Colors.lightGreenAccent,
             ),
             child: Column(children: [
               Expanded(

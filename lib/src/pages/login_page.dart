@@ -20,17 +20,14 @@ class _LoginPageState extends State<LoginPage> {
              Image.asset('images/Logo_ProwessAgronomia.png',
              height: 300.0,
              ),
-              SizedBox(height: 15.0,)
+              const SizedBox(height: 15.0),
              _userTextField(),
-             SizedBox(height: 15,),
+             const SizedBox(height: 15,),
              _passwordTextField(),
-             SizedBox(height: 20.0,),
+             const SizedBox(height: 20.0,),
              _bottonLogin(),
-
            ]
-
          )
-
        ), 
 
      ),  
@@ -41,8 +38,8 @@ Widget _userTextField(){
   return StreamBuilder(
     builder: (BuildContext context,AsyncSnapshot snapshot){
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: TextField(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: const TextField(
           decoration: InputDecoration(
 
           ),
@@ -55,8 +52,8 @@ Widget _userTextField(){
   _passwordTextField() {return StreamBuilder(
     builder: (BuildContext context,AsyncSnapshot snapshot){
       return Container(
-        padding: EdgeInsets.symmetric(horizontal: 20.0),
-        child: TextField(
+        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        child: const TextField(
           decoration: InputDecoration(
             
           ),

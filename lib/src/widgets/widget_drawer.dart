@@ -6,40 +6,40 @@ class MenuLateral extends StatelessWidget {
     return Drawer(
       child: ListView(padding: EdgeInsets.zero, children: [
         DrawerHeader(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.green,
             ),
             child: Column(children: [
               Expanded(
-                child: Image.asset('images/Logo_ProwessAgronomia.png'),
+                child: Image.asset('assets/images/Logo_ProwessAgronomia.png'),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 10.0,
               ),
             ])),
             ListTile(
-                leading: Icon(Icons.account_balance_outlined),
-                title: Text('Inicio'),
+                leading: const Icon(Icons.account_balance_outlined),
+                title: const Text('Inicio'),
                 onTap: () {}
             ),
             ListTile(
-            leading: Icon(Icons.apartment_outlined),
-            title: Text('Nosotros'),
+            leading: const Icon(Icons.apartment_outlined),
+            title: const Text('Nosotros'),
             onTap: () {}
             ),
             ListTile(
-            leading: Icon(Icons.badge_outlined),
-            title: Text('Equipo'),
+            leading: const Icon(Icons.badge_outlined),
+            title: const Text('Equipo'),
             onTap: () {}
             ),
             ListTile(
-            leading: Icon(Icons.shopping_bag_outlined),
-            title: Text('MarketPlace'),
+            leading: const Icon(Icons.shopping_bag_outlined),
+            title: const Text('MarketPlace'),
             onTap: () {}
             ),
             ListTile(
-            leading: Icon(Icons.account_box_rounded),
-            title: Text('Mi Cuenta'),
+            leading: const Icon(Icons.account_box_rounded),
+            title: const Text('Mi Cuenta'),
             onTap: () {}
             ),
       ]),

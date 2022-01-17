@@ -1,7 +1,8 @@
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
+import 'package:prowessagronomia/src/pages/login_page.dart';
+
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
 
@@ -15,12 +16,13 @@ class _SplashScreenState extends State<SplashScreen> {
     
     super.initState();
     Timer(const Duration(seconds:7), ()=>Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Homepage())));
+
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        
         width: double.infinity,
         height: double.infinity,
         decoration: const BoxDecoration(
@@ -41,7 +43,6 @@ class _SplashScreenState extends State<SplashScreen> {
               valueColor: AlwaysStoppedAnimation<Color>(Colors.orange)
             ),
           ],
-          
         ),
       )
     );

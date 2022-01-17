@@ -15,15 +15,15 @@ class _LoginPageState extends State<LoginPage> {
        body: Center(
          child: Column(
            children :[
-             Image.asset('images/Logo_ProwessAgronomia.png',
+             Image.asset('assets/images/Logo_ProwessAgronomia.png',
              height: 300.0,
              ),
               const SizedBox(height: 15.0),
              _userTextField(),
-             const SizedBox(height: 15,),
+             const SizedBox(height: 15.0),
              _passwordTextField(),
              const SizedBox(height: 20.0,),
-             _bottonLogin(),
+             //_bottonLogin(),
            ]
          )
        ), 
@@ -47,11 +47,12 @@ Widget _userTextField(){
     );
 
 }
-  _passwordTextField() {return StreamBuilder(
+  Widget _passwordTextField() {return StreamBuilder(
     builder: (BuildContext context,AsyncSnapshot snapshot){
       return Container(
         padding: const EdgeInsets.symmetric(horizontal: 20.0),
         child: const TextField(
+          keyboardType: TextInputType.emailAddress,
           decoration: InputDecoration(
             
           ),

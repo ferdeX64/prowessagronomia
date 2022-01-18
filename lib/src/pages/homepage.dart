@@ -12,19 +12,29 @@ class _HomepageState extends State<Homepage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 125,
-          backgroundColor: Colors.lightGreenAccent,
-          title: Row(
+            toolbarHeight: 80,
+            backgroundColor: Colors.lightGreenAccent,
+            title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                  Image.asset('assets/images/Logo_ProwessAgronomia.png',
-                  fit: BoxFit.contain,     
-                  height: 250,
-                  width: 250,
+                Image.asset(
+                  'assets/images/Logo_ProwessAgronomia.png',
+                  fit: BoxFit.contain,
+                  height: 150,
+                  width: 150,
+                ),
+              ],
+            ),
+            actions: <Widget>[
+              IconButton(
+                padding: EdgeInsets.zero,
+                icon: const Icon(Icons.account_box_rounded),
+                iconSize: 40.0,
+                tooltip: 'Registrar Cuenta',
+                color: Colors.black,
+                onPressed: () {},
               ),
-            ],
-          ),
-        ),
+            ]),
         drawer: MenuLateral(),
       ),
     );

@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
-import 'package:prowessagronomia/src/pages/login_page.dart';
 
 class SplashScreen extends StatefulWidget {
   SplashScreen({Key? key}) : super(key: key);
@@ -13,10 +12,8 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    
     super.initState();
     Timer(const Duration(seconds:7), ()=>Navigator.pushReplacement(context,MaterialPageRoute(builder: (context)=>Homepage())));
-
   }
 
   @override

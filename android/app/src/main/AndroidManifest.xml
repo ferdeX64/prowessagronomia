@@ -3,6 +3,7 @@
    <application
         android:label="prowessagronomia"
         android:icon="@mipmap/launcher_icon">
+
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

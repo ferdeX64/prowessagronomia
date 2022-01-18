@@ -14,15 +14,15 @@ class _CategoriaState extends State<Categorias>{
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          toolbarHeight: 125,
+          toolbarHeight: 80,
           backgroundColor: Colors.lightGreenAccent,
           title: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                   Image.asset('assets/images/Logo_ProwessAgronomia.png',
                   fit: BoxFit.contain,     
-                  height: 250,
-                  width: 250,
+                  height: 150,
+                  width: 150,
               ),
             ],
           ),

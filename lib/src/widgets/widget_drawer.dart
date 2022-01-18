@@ -4,7 +4,7 @@ class MenuLateral extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      child: ListView(padding: EdgeInsets.zero, children: [
+      child:Ink( color: Colors.green[600], child:  ListView(padding: EdgeInsets.zero, children: [
         DrawerHeader(
             decoration: const BoxDecoration(
               color: Colors.lightGreenAccent,
@@ -43,6 +43,7 @@ class MenuLateral extends StatelessWidget {
             tileColor: Colors.green[600],
             onTap: () {}),
       ]),
+    )
     );
   }
 }

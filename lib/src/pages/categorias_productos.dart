@@ -4,11 +4,11 @@ import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
 class Categorias extends StatefulWidget{
   const Categorias({Key? key}) : super(key: key);
-
    @override
   _CategoriaState createState() => _CategoriaState();
 }
 class _CategoriaState extends State<Categorias>{
+  String _fontFamily = "Nexa";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -34,9 +34,16 @@ class _CategoriaState extends State<Categorias>{
         ],
         ),
         drawer: MenuLateral(),
+        
         body: Column(
         children: [
           _Searchbar(),
+           const Text('Productos',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 40,
+                    color: Colors.black),
+                    ),
           Expanded(
             child: SingleChildScrollView(
               physics: const BouncingScrollPhysics(),

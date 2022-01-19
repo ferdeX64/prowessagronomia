@@ -28,13 +28,19 @@ class _HomepageState extends State<Homepage> {
             actions: <Widget>[
               IconButton(
                 padding: EdgeInsets.zero,
-                icon: const Icon(Icons.account_box_rounded),
+                icon: const Icon(Icons.add_shopping_cart_rounded),
                 iconSize: 40.0,
-                tooltip: 'Registrar Cuenta',
-                color: Colors.black,
-                onPressed: () {},
+                tooltip: 'Carrito',
+                color: Colors.white,
+                onPressed: () {
+                  // Navigator.push(
+                  // context,
+                  // MaterialPageRoute(
+                  //   builder: (BuildContext context) => HomePage()));
+                },
               ),
             ]),
+        
         drawer: MenuLateral(),
       ),
     );

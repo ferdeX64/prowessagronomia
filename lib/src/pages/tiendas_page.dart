@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/widgets/panel_widget.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+
 class StorePage extends StatefulWidget {
   const StorePage({Key? key}) : super(key: key);
 
@@ -32,11 +33,16 @@ class _StorePageState extends State<StorePage> {
             actions: <Widget>[
               IconButton(
                 padding: EdgeInsets.zero,
-                icon: const Icon(Icons.account_box_rounded),
+                icon: const Icon(Icons.add_shopping_cart_rounded),
                 iconSize: 40.0,
-                tooltip: 'Registrar Cuenta',
-                color: Colors.black,
-                onPressed: () {},
+                tooltip: 'Carrito',
+                color: Colors.white,
+                onPressed: () {
+                  // Navigator.push(
+                  // context,
+                  // MaterialPageRoute(
+                  //   builder: (BuildContext context) => HomePage()));
+                },
               ),
             ]),
             body: SlidingUpPanel(

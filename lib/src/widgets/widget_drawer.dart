@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import 'package:prowessagronomia/src/pages/tiendas_page.dart';
-=======
 import 'package:prowessagronomia/src/pages/categorias_productos.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
->>>>>>> e2b7f169c239a33029d2e2ff9c6c121eadf40aab
+import 'package:prowessagronomia/src/pages/tiendas_page.dart';
 
 class MenuLateral extends StatelessWidget {
   @override
@@ -17,7 +14,6 @@ class MenuLateral extends StatelessWidget {
               decoration: const BoxDecoration(
                 color: Colors.lightGreenAccent,
               ),
-<<<<<<< HEAD
               child: Column(children: [
                 Expanded(
                   child: Image.asset('assets/images/Logo_ProwessAgronomia.png'),
@@ -30,7 +26,12 @@ class MenuLateral extends StatelessWidget {
               leading: const Icon(Icons.account_balance_outlined),
               title: const Text('Inicio'),
               tileColor: Colors.green[600],
-              onTap: () {}),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => Homepage()));
+              }),
           ListTile(
               leading: const Icon(Icons.apartment_outlined),
               title: const Text('Nosotros'),
@@ -40,67 +41,30 @@ class MenuLateral extends StatelessWidget {
               leading: const Icon(Icons.badge_outlined),
               title: const Text('Equipo'),
               tileColor: Colors.green[600],
-              onTap: () {}),
-          ListTile(
-              leading: const Icon(Icons.shopping_bag_outlined),
-              title: const Text('MarketPlace'),
-              tileColor: Colors.green[600],
               onTap: () {
-                Navigator.push<void>(
-            context,
-            MaterialPageRoute<void>(
-              builder: (BuildContext context) =>
-                  const StorePage(),
-            ),
-          );
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const StorePage()));
               }),
           ListTile(
-              leading: const Icon(Icons.account_box_rounded),
-              title: const Text('Mi Cuenta'),
-              tileColor: Colors.green[600],
-              onTap: () {}),
-        ]),
-     )
-=======
-            ])),
-        ListTile(
-            leading: const Icon(Icons.account_balance_outlined),
-            title: const Text('Inicio'),
-            tileColor: Colors.green[600],
-            onTap: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => Homepage()));
-            }),
-        ListTile(
-            leading: const Icon(Icons.apartment_outlined),
-            title: const Text('Nosotros'),
-            tileColor: Colors.green[600],
-            onTap: () {}),
-        ListTile(
-            leading: const Icon(Icons.badge_outlined),
-            title: const Text('Equipo'),
-            tileColor: Colors.green[600],
-            onTap: () {}),
-        ListTile(
             leading: const Icon(Icons.shopping_bag_outlined),
             title: const Text('MarketPlace'),
             tileColor: Colors.green[600],
             onTap: () {
-              Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (BuildContext context) => Categorias()));
-            }),
-        ListTile(
-            leading: const Icon(Icons.account_box_rounded),
-            title: const Text('Mi Cuenta'),
-            tileColor: Colors.green[600],
-            onTap: () {}),
-      ]),
-    )
->>>>>>> e2b7f169c239a33029d2e2ff9c6c121eadf40aab
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (BuildContext context) => const Categorias()));
+            }
+          ),
+          ListTile(
+              leading: const Icon(Icons.account_box_rounded),
+              title: const Text('Registrarse'),
+              tileColor: Colors.green[600],
+              onTap: () {}),
+        ]),
+     )
     );
   }
 }

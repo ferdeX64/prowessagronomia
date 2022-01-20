@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prowessagronomia/src/pages/categorias_productos.dart';
-import 'package:prowessagronomia/src/pages/login_page.dart';
 import 'package:prowessagronomia/src/pages/splash_screen.dart';
 
 void main() {

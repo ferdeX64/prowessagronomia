@@ -32,7 +32,7 @@ class _StorePageState extends State<StorePage> {
             actions: <Widget>[
               IconButton(
                 padding: EdgeInsets.zero,
-                icon: const Icon(Icons.account_box_rounded),
+                icon: const Icon(Icons.add_shopping_cart_rounded),
                 iconSize: 40.0,
                 tooltip: 'Registrar Cuenta',
                 color: Colors.black,

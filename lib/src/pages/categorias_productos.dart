@@ -41,7 +41,13 @@ class _CategoriaState extends State<Categorias>{
            const Text('Productos',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
-                    fontSize: 40,
+                    fontSize: 35,
+                    color: Colors.black),
+                    ),
+            const Text('Categorias',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 20,
                     color: Colors.black),
                     ),
           Expanded(
@@ -61,7 +67,7 @@ class _Searchbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-              margin: const EdgeInsets.only(top:20, left: 15, right: 15),
+              margin: const EdgeInsets.only(top:20, left: 15, right: 15,bottom: 10),
               child: const CustomTextBox(hint: "Buscar", prefix: Icon(Icons.search, color:  Color(0xFF3E4249)))
       );
   }
@@ -71,7 +77,7 @@ class _TablesMenusOpts extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.only(top: 15),
+      padding: const EdgeInsets.only(top: 25),
       width: double.infinity,
       height: 620,
       child: Table(
@@ -103,7 +109,7 @@ class _TableRowsMenus extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {},
-      child: Padding(
+      child: Padding( 
         padding: const EdgeInsets.all(8.0),
         child: Container(
           height: 180,
@@ -131,7 +137,7 @@ class _TableRowsMenus extends StatelessWidget {
               Text(
                 description,
                 style: const TextStyle(
-                    fontWeight: FontWeight.w300,
+                    fontWeight: FontWeight.w400,
                     fontSize: 15,
                     color: Colors.black),
               ),

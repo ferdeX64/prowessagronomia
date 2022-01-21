@@ -57,8 +57,4 @@ class PanelWidget extends StatelessWidget {
         )
     )
   );
-  
-
-  
-   
 }

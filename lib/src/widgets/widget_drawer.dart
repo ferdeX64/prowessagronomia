@@ -28,8 +28,12 @@ class MenuLateral extends StatelessWidget {
                   ),
                 ])),
             ListTile(
-              leading: const Icon(Icons.account_balance_outlined),
-              title: const Text('Inicio'),
+              leading: const Icon(Icons.account_balance_outlined,color:Colors.white),
+              title: const Text('Inicio',
+                style: TextStyle(
+                fontSize: 18,
+                color: Colors.white),
+              ),
               tileColor: Colors.green[600],
               onTap: () {
                 Navigator.push(
@@ -39,13 +43,21 @@ class MenuLateral extends StatelessWidget {
               },
             ),
             ListTile(
-              leading: const Icon(Icons.apartment_outlined),
-              title: const Text('Nosotros'),
+              leading: const Icon(Icons.apartment_outlined,color: Colors.white),
+              title: const Text('Nosotros',
+                style: TextStyle(
+                fontSize: 18,
+                color: Colors.white),
+              ),
               tileColor: Colors.green[600],
               onTap: () {}),
             ListTile(
-              leading: const Icon(Icons.badge_outlined),
-              title: const Text('Equipo'),
+              leading: const Icon(Icons.badge_outlined,color:Colors.white),
+              title: const Text('Equipo',
+                style: TextStyle(
+                fontSize: 18,
+                color: Colors.white),
+              ),
               tileColor: Colors.green[600],
               onTap: () {}
             ),
@@ -62,12 +74,18 @@ class MenuLateral extends StatelessWidget {
               children: [
                 AccordionSection(
                   isOpen: false,
-                  leftIcon: const Icon(Icons.shopping_bag_outlined, color: Colors.black),
-                  header: const Text('MarketPlace'),
+                  contentBackgroundColor: Colors.orange[700],
+                  leftIcon: const Icon(Icons.shopping_bag_outlined, color: Colors.white),
+                  header: const Text('MarketPlace',
+                    style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white),
+                  ),
                   content: ListView(
                     shrinkWrap: true,
                     children: <Widget>[
                       Card(
+                        color: Colors.green,
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -77,12 +95,17 @@ class MenuLateral extends StatelessWidget {
                             );
                           },
                           child: const ListTile(
-                          leading: Icon(Icons.production_quantity_limits_rounded,color: Colors.black),
-                          title: Text('Productos'),
+                            leading: Icon(Icons.production_quantity_limits_rounded,color: Colors.white),
+                            title: Text('Productos',
+                              style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
                       Card(
+                        color: Colors.green,
                         child: InkWell(
                           onTap: () {
                             Navigator.push(
@@ -91,8 +114,12 @@ class MenuLateral extends StatelessWidget {
                               builder: (BuildContext context) => const StorePage()));
                           },
                           child: const ListTile(
-                            leading: Icon(Icons.add_business_rounded,color: Colors.black),
-                            title: Text('Tiendas'),
+                            leading: Icon(Icons.add_business_rounded,color: Colors.white),
+                            title: Text('Tiendas',
+                              style: TextStyle(
+                              fontSize: 18,
+                              color: Colors.white),
+                            ),
                           ),
                         ),
                       ),
@@ -101,8 +128,12 @@ class MenuLateral extends StatelessWidget {
                 ),
               ],),
             ListTile(
-                leading: const Icon(Icons.account_box_rounded),
-                title: const Text('Registrarse'),
+                leading: const Icon(Icons.account_box_rounded,color:Colors.white),
+                title: const Text('Registrarse',
+                style: TextStyle(
+                fontSize: 18,
+                color: Colors.white),
+              ),
                 tileColor: Colors.green[600],
                 onTap: () {}
             ),

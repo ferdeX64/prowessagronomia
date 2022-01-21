@@ -31,7 +31,7 @@ class _HomepageState extends State<Homepage> {
                 icon: const Icon(Icons.add_shopping_cart_rounded),
                 iconSize: 40.0,
                 tooltip: 'Carrito',
-                color: Colors.white,
+                color: Colors.black,
                 onPressed: () {
                   // Navigator.push(
                   // context,

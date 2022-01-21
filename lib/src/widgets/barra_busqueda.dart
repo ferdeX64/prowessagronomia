@@ -25,7 +25,7 @@ class CustomTextBox extends StatelessWidget {
             suffixIcon: suffix,
             border: InputBorder.none,
             hintText: hint,
-            hintStyle: const TextStyle(color: Color(0xFF3E4249), fontSize: 15)),
+            hintStyle: const TextStyle(color: Color(0xFF3E4249), fontSize: 17)),
         ),
       );
   }

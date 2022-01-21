@@ -40,7 +40,14 @@ class _HomepageState extends State<Homepage> {
                 },
               ),
             ]),
-        
+        body: Container(
+          child: Text(
+              'Kandersteg, Switzerland',
+              style: TextStyle(
+                color: Colors.grey[500],
+              ),
+          ),
+        ),
         drawer: MenuLateral(),
       ),
     );

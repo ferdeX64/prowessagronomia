@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
+import 'carrito_page.dart';
+
 class Homepage extends StatefulWidget {
   @override
   _HomepageState createState() => _HomepageState();
@@ -33,10 +35,10 @@ class _HomepageState extends State<Homepage> {
                 tooltip: 'Carrito',
                 color: Colors.black,
                 onPressed: () {
-                  // Navigator.push(
-                  // context,
-                  // MaterialPageRoute(
-                  //   builder: (BuildContext context) => HomePage()));
+                   Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                     builder: (BuildContext context) => CarritoPage()));
                 },
               ),
             ]),

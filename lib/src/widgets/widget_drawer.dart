@@ -47,66 +47,59 @@ class MenuLateral extends StatelessWidget {
               leading: const Icon(Icons.badge_outlined),
               title: const Text('Equipo'),
               tileColor: Colors.green[600],
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (BuildContext context) => const StorePage()));
-              }
+              onTap: () {}
             ),
-            ListTile(
-              leading: const Icon(Icons.shopping_bag_outlined),
-              title: const Text('MarketPlace'),
-              tileColor: Colors.green[600],
-              onTap: () {
-                Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (BuildContext context) => const Categorias()));
-              }
-            ),
-            Container(
-              child: Accordion(
-                paddingListBottom: 0.0,
-                paddingBetweenClosedSections: 0.0,
-                paddingListHorizontal: 0,
-                paddingListTop: 0.0,
-                paddingBetweenOpenSections: 0.0,
-                headerBackgroundColor: Colors.green[600],
-                contentBorderColor:  Colors.green[600],
-                contentBackgroundColor: Colors.lightGreenAccent,
-                headerPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
-                children: [
-                  AccordionSection(
-                    isOpen: false,
-                    leftIcon: const Icon(Icons.shopping_bag_outlined, color: Colors.black),
-                    header: const Text('MarketPlace'),
-                    content: ListView(
-                      shrinkWrap: true,
-                      children: <Widget>[
-                        Card(
-                          child: InkWell(
-                            onTap: () {},
-                            child: const ListTile(
-                            leading: Icon(Icons.production_quantity_limits_rounded,color: Colors.black),
-                            title: Text('Productos'),
-                            ),
+            Accordion(
+              paddingListBottom: 0.0,
+              paddingBetweenClosedSections: 0.0,
+              paddingListHorizontal: 0,
+              paddingListTop: 0.0,
+              paddingBetweenOpenSections: 0.0,
+              headerBackgroundColor: Colors.green[600],
+              contentBorderColor:  Colors.green[600],
+              contentBackgroundColor: Colors.lightGreenAccent,
+              headerPadding: const EdgeInsets.symmetric(vertical: 10, horizontal: 16),
+              children: [
+                AccordionSection(
+                  isOpen: false,
+                  leftIcon: const Icon(Icons.shopping_bag_outlined, color: Colors.black),
+                  header: const Text('MarketPlace'),
+                  content: ListView(
+                    shrinkWrap: true,
+                    children: <Widget>[
+                      Card(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (BuildContext context) => const Categorias())
+                            );
+                          },
+                          child: const ListTile(
+                          leading: Icon(Icons.production_quantity_limits_rounded,color: Colors.black),
+                          title: Text('Productos'),
                           ),
                         ),
-                        Card(
-                          child: InkWell(
-                            onTap: () {},
-                            child: const ListTile(
-                              leading: Icon(Icons.add_business_rounded,color: Colors.black),
-                              title: Text('Tiendas'),
-                            ),
+                      ),
+                      Card(
+                        child: InkWell(
+                          onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (BuildContext context) => const StorePage()));
+                          },
+                          child: const ListTile(
+                            leading: Icon(Icons.add_business_rounded,color: Colors.black),
+                            title: Text('Tiendas'),
                           ),
                         ),
-                      ]
-                    ),
+                      ),
+                    ]
                   ),
-                ],),
-            ),
+                ),
+              ],),
             ListTile(
                 leading: const Icon(Icons.account_box_rounded),
                 title: const Text('Registrarse'),

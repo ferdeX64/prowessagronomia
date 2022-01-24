@@ -4,6 +4,8 @@ import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 import 'carrito_page.dart';
 
 class Homepage extends StatefulWidget {
+  const Homepage({Key? key}) : super(key: key);
+
   @override
   _HomepageState createState() => _HomepageState();
 }
@@ -38,19 +40,17 @@ class _HomepageState extends State<Homepage> {
                    Navigator.push(
                    context,
                    MaterialPageRoute(
-                     builder: (BuildContext context) => CarritoPage()));
+                     builder: (BuildContext context) => const CarritoPage()));
                 },
               ),
             ]),
-        body: Container(
-          child: Text(
-              'Kandersteg, Switzerland',
-              style: TextStyle(
-                color: Colors.grey[500],
-              ),
-          ),
+        body: Text(
+            'Kandersteg, Switzerland',
+            style: TextStyle(
+              color: Colors.grey[500],
+            ),
         ),
-        drawer: MenuLateral(),
+        drawer: const MenuLateral(),
       ),
     );
   }

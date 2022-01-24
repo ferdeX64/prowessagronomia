@@ -8,7 +8,6 @@ class Categorias extends StatefulWidget{
   _CategoriaState createState() => _CategoriaState();
 }
 class _CategoriaState extends State<Categorias>{
-  String _fontFamily = "Nexa";
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -33,8 +32,7 @@ class _CategoriaState extends State<Categorias>{
           ),
         ],
         ),
-        drawer: MenuLateral(),
-        
+        drawer: const MenuLateral(),
         body: Column(
         children: [
           _Searchbar(),

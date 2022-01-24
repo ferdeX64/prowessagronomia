@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/stores_details_page.dart';
 class PanelWidget extends StatelessWidget {
   final ScrollController controller;
   final numbers =List.generate(4,(index)=>'$index');
   PanelWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)=>Container(
+  Widget build(BuildContext context)=>
+  InkWell(                        
+        child:  Container(
     decoration:const  BoxDecoration(
       color: Colors.lightGreenAccent,
       borderRadius: BorderRadius.only(
@@ -30,7 +33,18 @@ class PanelWidget extends StatelessWidget {
           const SizedBox(height: 24),
     ],
     ),
-  );
+     ),                        
+        onTap: () {                          
+        Navigator.push<void>(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) =>
+                  StorePageDetails(),
+            ),
+          );
+        },                      
+     );
+ 
   
   Widget buildAboutText()=>GridView.builder(
            
@@ -50,7 +64,9 @@ class PanelWidget extends StatelessWidget {
               
             },
   );
-  Widget buildNumber(String number)=>Container(
+  Widget buildNumber(String number)=>
+  
+  Container(
    
         decoration: BoxDecoration(
           color: Colors.white,

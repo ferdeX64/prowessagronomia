@@ -42,7 +42,7 @@ class _StorePageState extends State<StorePage> {
                 icon: const Icon(Icons.add_shopping_cart_rounded),
                 iconSize: 40.0,
                 tooltip: 'Carrito',
-                color: Colors.white,
+                color: Colors.black,
                 onPressed: () {
                   // Navigator.push(
                   // context,
@@ -55,8 +55,17 @@ class _StorePageState extends State<StorePage> {
                
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
         
-              body:
-            const Text("Wigedt menu slide"),
+              body: Container(
+               
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(
+                        'assets/images/mapa.png'),
+                    fit: BoxFit.fill,
+                  ),
+                  
+                ),
+              ),
             panelBuilder: 
             (controller)=>PanelWidget(
               controller:controller,

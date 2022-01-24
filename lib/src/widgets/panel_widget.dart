@@ -54,8 +54,8 @@ class PanelWidget extends StatelessWidget {
    
         decoration: BoxDecoration(
           color: Colors.white,
-          border: Border.all(width: 10, color: Colors.black38),
-          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+          border: Border.all(width: 1, color: Colors.black38),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
         ),
     
     padding: const EdgeInsets.all(16),
@@ -63,7 +63,7 @@ class PanelWidget extends StatelessWidget {
     child: GridTile(
       
       header:Image.asset('assets/images/tienda.jpg', height: 60),
-      child: Center(
+      child: const Center(
         
         ),
         footer:Text(

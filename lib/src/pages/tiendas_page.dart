@@ -46,9 +46,12 @@ class _StorePageState extends State<StorePage> {
               ),
             ]),
             body: SlidingUpPanel(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+        
               body:
             const Text("Wigedt menu slide"),
-            panelBuilder: (controller)=>PanelWidget(
+            panelBuilder: 
+            (controller)=>PanelWidget(
               controller:controller,
             ),
         ),

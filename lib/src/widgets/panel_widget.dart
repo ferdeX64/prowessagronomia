@@ -1,22 +1,27 @@
 import 'package:flutter/material.dart';
 class PanelWidget extends StatelessWidget {
   final ScrollController controller;
-  final numbers =List.generate(5,(index)=>'$index');
+  final numbers =List.generate(4,(index)=>'$index');
   PanelWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
-  Widget build(BuildContext context)=>ListView(
-  children: <Widget>[
-    Container(
-      padding:const  EdgeInsets.symmetric(vertical: 5),
-      height: 55,
-      color: Colors.transparent,
-      child: const Center(child: Text('Tiendas',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),)),
+  Widget build(BuildContext context)=>Container(
+    color:Colors.lightGreenAccent,
+    width: 10,
+    child: ListView(
+      
+    children: <Widget>[
+      Container(
+        padding:const  EdgeInsets.symmetric(vertical: 15),
+        height: 50,
+        color: Colors.transparent,
+        child: const Text('        Todas las tiendas:',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black54)),
+      ),
+      const SizedBox(height: 14),
+          buildAboutText(),
+          const SizedBox(height: 24),
+    ],
     ),
-    const SizedBox(height: 14),
-        buildAboutText(),
-        const SizedBox(height: 24),
-  ],
   );
   Widget buildAboutText()=>GridView.builder(
             
@@ -37,22 +42,23 @@ class PanelWidget extends StatelessWidget {
             },
   );
   Widget buildNumber(String number)=>Container(
-
+   
+        decoration: BoxDecoration(
+          color: Colors.white,
+          border: Border.all(width: 10, color: Colors.black38),
+          borderRadius: const BorderRadius.all(const Radius.circular(8)),
+        ),
+    
     padding: const EdgeInsets.all(16),
-    color:Colors.orange,
+  
     child: GridTile(
-      header:Text(
-        'Header $number',
-        textAlign: TextAlign.center,
-      ),
+      
+      header:Image.asset('assets/images/tienda.jpg', height: 60),
       child: Center(
-        child:Text(
-          number,style:const TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
-          textAlign: TextAlign.center,
-        )
+        
         ),
         footer:Text(
-          'Footer $number',
+          'Tienda $number',
           textAlign: TextAlign.center,
         )
     )

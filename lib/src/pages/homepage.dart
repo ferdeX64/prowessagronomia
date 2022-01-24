@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/models/home_page_model.dart';
+import 'package:prowessagronomia/src/utils/productos_home_page.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
 import 'carrito_page.dart';
@@ -10,7 +12,15 @@ class Homepage extends StatefulWidget {
   _HomepageState createState() => _HomepageState();
 }
 
+
 class _HomepageState extends State<Homepage> {
+  late List<ProductsShareProduct> mList1;
+
+  @override
+  void initState() {
+    super.initState();
+    mList1 = productsImageList();
+  }
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -44,12 +54,37 @@ class _HomepageState extends State<Homepage> {
                 },
               ),
             ]),
-        body: Text(
-            'Kandersteg, Switzerland',
-            style: TextStyle(
-              color: Colors.grey[500],
-            ),
+        body: Container(
+        padding: const EdgeInsets.all(25),
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: <Widget>[
+              ListView.builder(
+                scrollDirection: Axis.vertical,
+                itemCount: mList1.length,
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                itemBuilder: (BuildContext context, int index) => Container(
+                  margin: const EdgeInsets.only(bottom: 20, left:30,right: 40,top:20),
+                  padding: const EdgeInsets.all(36),
+                  child: Column( 
+                    children: <Widget>[
+                      Image.asset(mList1[index].icon,
+                          height: 180, width: 250, fit: BoxFit.cover),
+                      const Text("Lomo de Cerdo",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          color: Colors.black, height:2.5),),
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
         ),
+      ),
         drawer: const MenuLateral(),
       ),
     );

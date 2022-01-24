@@ -35,6 +35,9 @@ dependencies:
   sliding_sheet: ^0.5.2
   sliding_up_panel: ^2.0.0+1
   accordion: ^2.1.2
+  nb_utils:
+  flutter_svg:
+  dots_indicator:
 
 dev_dependencies:
   flutter_test:

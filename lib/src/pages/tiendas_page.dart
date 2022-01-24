@@ -13,9 +13,15 @@ class StorePage extends StatefulWidget {
 class _StorePageState extends State<StorePage> {
   @override
   Widget build(BuildContext context) {
+    BorderRadiusGeometry radius = const BorderRadius.only(
+    topLeft: Radius.circular(24.0),
+    topRight: Radius.circular(24.0),
+  );
     return
     SafeArea(
+    
       child: Scaffold(
+        
         appBar: AppBar(
             toolbarHeight: 80,
             backgroundColor: Colors.lightGreenAccent,
@@ -46,7 +52,8 @@ class _StorePageState extends State<StorePage> {
               ),
             ]),
             body: SlidingUpPanel(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+               
+              margin: const EdgeInsets.symmetric(horizontal: 20.0),
         
               body:
             const Text("Wigedt menu slide"),
@@ -54,7 +61,11 @@ class _StorePageState extends State<StorePage> {
             (controller)=>PanelWidget(
               controller:controller,
             ),
+             borderRadius: radius, 
+           
         ),
+        
+        
         drawer: MenuLateral(),
       ),
     );

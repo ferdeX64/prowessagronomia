@@ -6,7 +6,14 @@ class PanelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context)=>Container(
-    color:Colors.lightGreenAccent,
+    decoration:const  BoxDecoration(
+      color: Colors.lightGreenAccent,
+      borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(24.0),
+    topRight: Radius.circular(24.0),
+      
+    )),
+   
     width: 10,
     child: ListView(
       
@@ -17,14 +24,16 @@ class PanelWidget extends StatelessWidget {
         color: Colors.transparent,
         child: const Text('        Todas las tiendas:',style: TextStyle(fontWeight: FontWeight.bold, fontSize: 18, color: Colors.black54)),
       ),
+      
       const SizedBox(height: 14),
           buildAboutText(),
           const SizedBox(height: 24),
     ],
     ),
   );
+  
   Widget buildAboutText()=>GridView.builder(
-            
+           
     shrinkWrap: true,
             gridDelegate: const  SliverGridDelegateWithFixedCrossAxisCount(
               crossAxisCount: 2,
@@ -38,7 +47,7 @@ class PanelWidget extends StatelessWidget {
             itemBuilder: (contex,index){
               final item=numbers[index];
               return buildNumber(item);
-
+              
             },
   );
   Widget buildNumber(String number)=>Container(
@@ -62,5 +71,6 @@ class PanelWidget extends StatelessWidget {
           textAlign: TextAlign.center,
         )
     )
+    
   );
 }

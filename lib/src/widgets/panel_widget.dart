@@ -1,14 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/stores_details_page.dart';
-class PanelWidget extends StatelessWidget {
+class PanelWidget extends StatefulWidget {
   final ScrollController controller;
+
+  const PanelWidget({Key? key, required this.controller}) : super(key: key);
+
+  @override
+  State<PanelWidget> createState() => _PanelWidgetState();
+}
+
+class _PanelWidgetState extends State<PanelWidget> {
   final numbers =List.generate(4,(index)=>'$index');
-  PanelWidget({Key? key, required this.controller}) : super(key: key);
 
   @override
   Widget build(BuildContext context)=>
-  InkWell(                        
-        child:  Container(
+   Container(
     decoration:const  BoxDecoration(
       color: Colors.lightGreenAccent,
       borderRadius: BorderRadius.only(
@@ -32,20 +38,10 @@ class PanelWidget extends StatelessWidget {
           buildAboutText(),
           const SizedBox(height: 24),
     ],
-    ),
-     ),                        
-        onTap: () {                          
-        Navigator.push<void>(
-            context,
-            MaterialPageRoute<void>(
-              builder: (BuildContext context) =>
-                  const StorePageDetails(),
-            ),
-          );
-        },                      
+    )                     
+                            
      );
- 
-  
+
   Widget buildAboutText()=>GridView.builder(
            
     shrinkWrap: true,
@@ -55,7 +51,7 @@ class PanelWidget extends StatelessWidget {
               mainAxisSpacing: 30,
               crossAxisSpacing:30 
             ) ,
-            controller: controller,
+            controller: widget.controller,
             padding:const EdgeInsets.symmetric(horizontal: 30),
             itemCount: numbers.length,
             itemBuilder: (contex,index){
@@ -64,8 +60,10 @@ class PanelWidget extends StatelessWidget {
               
             },
   );
+
   Widget buildNumber(String number)=>
-  
+  InkWell(                        
+        child: 
   Container(
    
         decoration: BoxDecoration(
@@ -88,5 +86,15 @@ class PanelWidget extends StatelessWidget {
         )
     )
     
+  ),
+  onTap: () {                          
+        Navigator.push<void>(
+            context,
+            MaterialPageRoute<void>(
+              builder: (BuildContext context) =>
+                  const StorePageDetails(),
+            ),
+          );
+        },  
   );
 }

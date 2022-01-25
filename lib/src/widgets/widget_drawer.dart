@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/categorias_productos.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
+import 'package:prowessagronomia/src/pages/login_page.dart';
 import 'package:prowessagronomia/src/pages/tiendas_page.dart';
 import 'package:accordion/accordion.dart';
 
@@ -39,7 +40,7 @@ class MenuLateral extends StatelessWidget {
                 Navigator.push(
                 context,
                 MaterialPageRoute(
-                builder: (BuildContext context) => Homepage()));
+                builder: (BuildContext context) => const Homepage()));
               },
             ),
             ListTile(
@@ -129,13 +130,20 @@ class MenuLateral extends StatelessWidget {
               ],),
             ListTile(
                 leading: const Icon(Icons.account_box_rounded,color:Colors.white),
-                title: const Text('Registrarse',
+                title: const Text('Iniciar Sesion',
                 style: TextStyle(
                 fontSize: 18,
                 color: Colors.white),
               ),
                 tileColor: Colors.green[600],
-                onTap: () {}
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) => const LoginPage()
+                    )
+                  );
+                }
             ),
           ]
         ),

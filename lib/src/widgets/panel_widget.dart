@@ -39,7 +39,7 @@ class PanelWidget extends StatelessWidget {
             context,
             MaterialPageRoute<void>(
               builder: (BuildContext context) =>
-                  StorePageDetails(),
+                  const StorePageDetails(),
             ),
           );
         },                      

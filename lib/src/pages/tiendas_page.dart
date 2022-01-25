@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/carrito_page.dart';
 import 'package:prowessagronomia/src/widgets/panel_widget.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
@@ -44,13 +45,14 @@ class _StorePageState extends State<StorePage> {
                 tooltip: 'Carrito',
                 color: Colors.black,
                 onPressed: () {
-                  // Navigator.push(
-                  // context,
-                  // MaterialPageRoute(
-                  //   builder: (BuildContext context) => HomePage()));
+                   Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                     builder: (BuildContext context) => const CarritoPage()));
                 },
               ),
-            ]),
+            ]
+        ),
             body: SlidingUpPanel(
                
               margin: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -71,11 +73,8 @@ class _StorePageState extends State<StorePage> {
               controller:controller,
             ),
              borderRadius: radius, 
-           
         ),
-        
-        
-        drawer: MenuLateral(),
+        drawer: const MenuLateral(),
       ),
     );
     

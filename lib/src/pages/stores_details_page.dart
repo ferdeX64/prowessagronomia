@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 class StorePageDetails extends StatefulWidget {
-  StorePageDetails({Key? key}) : super(key: key);
+  const StorePageDetails({Key? key}) : super(key: key);
 
   @override
   State<StorePageDetails> createState() => _StorePageDetailsState();

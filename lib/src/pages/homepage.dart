@@ -15,11 +15,16 @@ class Homepage extends StatefulWidget {
 
 class _HomepageState extends State<Homepage> {
   late List<ProductsShareProduct> mList1;
+  late List<ProductsShareName> mList2;
+  late List<ProductsSharePrices> mList3;
 
   @override
   void initState() {
     super.initState();
     mList1 = productsImageList();
+    mList2 = productsNameList();
+    mList3 = productsPricesList();
+
   }
   @override
   Widget build(BuildContext context) {
@@ -77,8 +82,13 @@ class _HomepageState extends State<Homepage> {
                     children: <Widget>[
                       Image.asset(mList1[index].icon,
                           height: 180, width: 250, fit: BoxFit.cover),
-                      const Text("Lomo de Cerdo",
-                        style: TextStyle(
+                      Text( mList2[index].name,
+                        style: const TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20,
+                          color: Colors.black, height:2.5),),
+                      Text(mList3[index].price,
+                        style: const TextStyle(
                           fontWeight: FontWeight.w400,
                           fontSize: 20,
                           color: Colors.black, height:2.5),),

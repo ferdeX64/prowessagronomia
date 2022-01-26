@@ -66,8 +66,13 @@ class _HomepageState extends State<Homepage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) => Container(
-                  margin: const EdgeInsets.only(bottom: 20, left:30,right: 40,top:20),
-                  padding: const EdgeInsets.all(36),
+                  margin: const EdgeInsets.only(bottom: 20, left:10,right: 20,top:20),
+                  padding: const EdgeInsets.all(20),
+                  decoration: BoxDecoration(
+                    color: const Color.fromRGBO(109, 104, 117,0.4),
+                    borderRadius: BorderRadius.circular(8.0),
+                    border: Border.all(
+                        width: 2, color: Colors.black26)),
                   child: Column( 
                     children: <Widget>[
                       Image.asset(mList1[index].icon,

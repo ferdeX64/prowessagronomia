@@ -32,6 +32,21 @@ class _StorePageDetailsState extends State<StorePageDetails> {
           onPressed: () => Navigator.of(context).pop(),
         )
       ),
-      body: Container());
+      body: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
+            child: Row(
+              children: const [
+                   Text("Tienda", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))
+              ],
+            ),
+            
+          ),
+          Container(
+
+          )
+        ],
+      ));
   }
 }

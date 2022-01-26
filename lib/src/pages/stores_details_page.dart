@@ -8,7 +8,7 @@ class StorePageDetails extends StatefulWidget {
 
 class _StorePageDetailsState extends State<StorePageDetails> {
   @override
-  Widget build(BuildContext context) {double totalPrice = 0;
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         toolbarHeight: 80,

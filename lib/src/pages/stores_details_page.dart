@@ -32,7 +32,7 @@ class _StorePageDetailsState extends State<StorePageDetails> {
           onPressed: () => Navigator.of(context).pop(),
         )
       ),
-      body: Container(
+      body: SingleChildScrollView(
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         child: Column(
           children: [
@@ -146,7 +146,36 @@ class _StorePageDetailsState extends State<StorePageDetails> {
                   ],
                 ),
               ]
+            ),
+            Form(
+              child: Column(
+                children: const <Widget>[
+                  TextField(
+                    decoration: InputDecoration(labelText: "Nombre"),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: "Correo electrónico"),
+                  ),
+                  TextField(
+                    decoration: InputDecoration(labelText: "Escribe tu mensaje.."),
+                  )
+                ],
+              )
+            ),
+            Center(
+              child: Container(
+                padding:  const EdgeInsets.only(top: 20.0),
+               child: RaisedButton(
+                padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
+                color: Colors.lightGreen, // background
+                textColor: Colors.white, // foreground
+                onPressed: () { },
+                child: const Text('Enviar',style: TextStyle(fontSize: 18),),
+              )
+
+              ),
             )
+
 
 
           ],

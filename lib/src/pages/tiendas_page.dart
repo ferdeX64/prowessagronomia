@@ -12,17 +12,17 @@ class StorePage extends StatefulWidget {
 }
 
 class _StorePageState extends State<StorePage> {
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); 
   @override
   Widget build(BuildContext context) {
     BorderRadiusGeometry radius = const BorderRadius.only(
     topLeft: Radius.circular(24.0),
     topRight: Radius.circular(24.0),
   );
-    return
-    SafeArea(
-    
+    return    SafeArea(
       child: Scaffold(
-        
+        key: _key,
+      drawer: const MenuLateral(),
         appBar: AppBar(
             toolbarHeight: 80,
             backgroundColor: Colors.lightGreenAccent,
@@ -36,6 +36,13 @@ class _StorePageState extends State<StorePage> {
                   width: 150,
                 ),
               ],
+            ),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: ()=> _key.currentState!.openDrawer(),
             ),
             actions: <Widget>[
               IconButton(
@@ -74,9 +81,10 @@ class _StorePageState extends State<StorePage> {
             ),
              borderRadius: radius, 
         ),
-        drawer: const MenuLateral(),
-      ),
+        
+      )
     );
+    
     
   }
 }

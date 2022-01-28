@@ -28,8 +28,10 @@ class _HomepageState extends State<Homepage> {
   }
   @override
   Widget build(BuildContext context) {
+    final GlobalKey<ScaffoldState> _key = GlobalKey(); 
     return SafeArea(
       child: Scaffold(
+        key: _key,
         appBar: AppBar(
             toolbarHeight: 80,
             backgroundColor: Colors.lightGreenAccent,
@@ -43,6 +45,13 @@ class _HomepageState extends State<Homepage> {
                   width: 150,
                 ),
               ],
+            ),
+            leading: IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: ()=> _key.currentState!.openDrawer(),
             ),
             actions: <Widget>[
               IconButton(

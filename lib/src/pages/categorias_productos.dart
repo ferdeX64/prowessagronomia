@@ -9,10 +9,12 @@ class Categorias extends StatefulWidget{
   _CategoriaState createState() => _CategoriaState();
 }
 class _CategoriaState extends State<Categorias>{
+  final GlobalKey<ScaffoldState> _key = GlobalKey(); 
   @override
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        key: _key,
         appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: Colors.lightGreenAccent,
@@ -26,6 +28,13 @@ class _CategoriaState extends State<Categorias>{
               ),
             ],
           ),
+          leading: IconButton(
+              icon: const Icon(
+                Icons.menu,
+                color: Colors.black,
+              ),
+              onPressed: ()=> _key.currentState!.openDrawer(),
+            ),
           actions: [
             IconButton(
               padding: EdgeInsets.zero,

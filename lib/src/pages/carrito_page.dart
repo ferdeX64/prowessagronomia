@@ -28,7 +28,15 @@ class _CarritoPageState extends State<CarritoPage> {
             ),
           ],
         ),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back,
+            color: Colors.black,
+          ),
+          onPressed: () => Navigator.of(context).pop(),
+        )
       ),
+      
       body: ListView.separated(
           itemBuilder: (BuildContext context,int index){
             return Padding(

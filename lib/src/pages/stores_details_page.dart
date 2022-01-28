@@ -164,12 +164,13 @@ class _StorePageDetailsState extends State<StorePageDetails> {
             ),
             Center(
               child: Container(
-                padding:  const EdgeInsets.symmetric(vertical: 25),
+                padding:  const EdgeInsets.only(top: 20.0),
                child: RaisedButton(
+                padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
                 color: Colors.lightGreen, // background
                 textColor: Colors.white, // foreground
                 onPressed: () { },
-                child: const Text('Enviar'),
+                child: const Text('Enviar',style: TextStyle(fontSize: 18),),
               )
 
               ),

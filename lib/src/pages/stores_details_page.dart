@@ -149,7 +149,7 @@ class _StorePageDetailsState extends State<StorePageDetails> {
             ),
             Form(
               child: Column(
-                children: <Widget>[
+                children: const <Widget>[
                   TextField(
                     decoration: InputDecoration(labelText: "Nombre"),
                   ),
@@ -169,7 +169,7 @@ class _StorePageDetailsState extends State<StorePageDetails> {
                 color: Colors.lightGreen, // background
                 textColor: Colors.white, // foreground
                 onPressed: () { },
-                child: Text('Enviar'),
+                child: const Text('Enviar'),
               )
 
               ),

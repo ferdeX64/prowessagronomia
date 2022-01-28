@@ -58,13 +58,22 @@ class _HomepageState extends State<Homepage> {
                      builder: (BuildContext context) => const CarritoPage()));
                 },
               ),
-            ]),
+            ]
+            ),
         body: Container(
         padding: const EdgeInsets.all(25),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              const Center(
+                child: Text('Productos Populares',
+                    style: TextStyle(
+                      fontWeight: FontWeight.w500,
+                      fontSize: 35,
+                      color: Colors.black),
+                      ),
+              ),
               ListView.builder(
                 scrollDirection: Axis.vertical,
                 itemCount: mList1.length,
@@ -74,7 +83,7 @@ class _HomepageState extends State<Homepage> {
                   margin: const EdgeInsets.only(bottom: 20, left:10,right: 20,top:20),
                   padding: const EdgeInsets.all(20),
                   decoration: BoxDecoration(
-                    color: const Color.fromRGBO(109, 104, 117,0.4),
+                    color: const Color.fromRGBO(109, 104, 117,0.3),
                     borderRadius: BorderRadius.circular(8.0),
                     border: Border.all(
                         width: 2, color: Colors.black26)),
@@ -85,13 +94,27 @@ class _HomepageState extends State<Homepage> {
                       Text( mList2[index].name,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
-                          color: Colors.black, height:2.5),),
+                          fontSize: 25,
+                          color: Colors.black, height:2),),
                       Text(mList3[index].price,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 20,
-                          color: Colors.black, height:2.5),),
+                          fontSize: 25,
+                          color: Colors.black, height:2),),
+                      Center(
+                    child: Container(
+                      padding:  const EdgeInsets.symmetric(vertical: 25),
+                    child: RaisedButton(
+                      padding:  const EdgeInsets.symmetric(vertical: 20,horizontal:20),
+                      color: Colors.lightGreen, // background
+                      textColor: Colors.white, // foreground
+                      onPressed: () { },
+                      child: const Text('Añadir al carrito',style: TextStyle(
+                          fontWeight: FontWeight.w400,
+                          fontSize: 20)),
+                    )
+                    ),
+                  )
                     ],
                   ),
                 ),

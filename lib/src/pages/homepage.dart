@@ -1,5 +1,4 @@
-// ignore_for_file: deprecated_member_use
-
+import 'package:async_button_builder/async_button_builder.dart';
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/models/home_page_model.dart';
 import 'package:prowessagronomia/src/utils/productos_home_page.dart';
@@ -30,10 +29,8 @@ class _HomepageState extends State<Homepage> {
   }
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _key = GlobalKey(); 
     return SafeArea(
       child: Scaffold(
-        key: _key,
         appBar: AppBar(
             toolbarHeight: 80,
             backgroundColor: Colors.lightGreenAccent,
@@ -47,13 +44,6 @@ class _HomepageState extends State<Homepage> {
                   width: 150,
                 ),
               ],
-            ),
-            leading: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-              onPressed: ()=> _key.currentState!.openDrawer(),
             ),
             actions: <Widget>[
               IconButton(
@@ -91,8 +81,8 @@ class _HomepageState extends State<Homepage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) => Container(
-                  margin: const EdgeInsets.only(bottom: 20, left:10,right: 20,top:20),
-                  padding: const EdgeInsets.all(20),
+                  margin: const EdgeInsets.only(bottom: 30, left:10,right: 20,top:20),
+                  padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(109, 104, 117,0.3),
                     borderRadius: BorderRadius.circular(8.0),
@@ -112,21 +102,65 @@ class _HomepageState extends State<Homepage> {
                           fontWeight: FontWeight.w400,
                           fontSize: 25,
                           color: Colors.black, height:2),),
-                      Center(
-                    child: Container(
-                      padding:  const EdgeInsets.symmetric(vertical: 25),
-                    child: RaisedButton(
-                      padding:  const EdgeInsets.symmetric(vertical: 20,horizontal:20),
-                      color: Colors.lightGreen, // background
-                      textColor: Colors.white, // foreground
-                      onPressed: () { },
-                      child: const Text('Añadir al carrito',style: TextStyle(
-                          fontWeight: FontWeight.w400,
-                          fontSize: 20)),
-                    )
-                    ),
-                  )
-                    ],
+                     AsyncButtonBuilder(
+                      child: const Padding(
+                        key: ValueKey('foo'),
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 17.0,
+                          vertical: 25.0,
+                        ),
+                        child: Text(
+                          'Añadir al carrito',
+                          style: TextStyle(color: Colors.white,fontSize: 20),
+                        ),
+                      ),
+                      loadingWidget: const Padding(
+                        key: ValueKey('bar'),
+                        padding: EdgeInsets.all(12.0),
+                        child: SizedBox(
+                          height: 16.0,
+                          width: 16.0,
+                          child: CircularProgressIndicator(
+                            valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
+                          ),
+                        ),
+                      ),
+                      successWidget: const Padding(
+                        key: ValueKey('foobar'),
+                        padding: EdgeInsets.all(15.0),
+                        child: Icon(
+                          Icons.check,
+                          color: Colors.purpleAccent,
+                        ),
+                      ),
+                      onPressed: () async {
+                        await Future.delayed(const Duration(seconds: 2));
+                      },
+                      loadingSwitchInCurve: Curves.bounceInOut,
+                      loadingTransitionBuilder: (child, animation) {
+                        return SlideTransition(
+                          position: Tween<Offset>(
+                            begin: const Offset(0, 1.0),
+                            end: const Offset(0, 0),
+                          ).animate(animation),
+                          child: child,
+                        );
+                      },
+                      builder: (context, child, callback, state) {
+                        return Material(
+                          color: state.maybeWhen(
+                            success: () => Colors.purple[100],
+                            orElse: () => Colors.lightGreen ,
+                          ),
+                          clipBehavior: Clip.hardEdge,
+                          shape: const StadiumBorder(),
+                          child: InkWell(
+                            child: child,
+                            onTap: callback,
+                          ),
+                        );
+                      },
+                    ),],
                   ),
                 ),
               )

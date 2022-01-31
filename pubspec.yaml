@@ -38,6 +38,7 @@ dependencies:
   nb_utils:
   flutter_svg:
   dots_indicator:
+  async_button_builder: ^2.2.0+1
 
 dev_dependencies:
   flutter_test:

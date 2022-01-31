@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:prowessagronomia/src/pages/sign_up.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({ Key? key }) : super(key: key);
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   _LoginPageState createState() => _LoginPageState();
@@ -12,181 +12,165 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: AnnotatedRegion<SystemUiOverlayStyle>(
-        value: const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
-        child: GestureDetector(
-          onTap: () => FocusScope.of(context).unfocus(),
-          child: Container(
-            width: double.infinity,
-            height: double.infinity,
-            color: Colors.white,
-            child: SingleChildScrollView(
-              padding: const EdgeInsets.only(
-                bottom: 0.0,
+    var size = MediaQuery.of(context).size;
+    var height = size.height;
+    var width = size.width;
+    return Container(
+      decoration: const BoxDecoration(
+        gradient: LinearGradient(
+          begin: Alignment.topLeft, 
+          end: Alignment.bottomRight, 
+          colors: [
+            Colors.white,
+            Colors.green,
+          ]
+        )
+      ),
+      child: Scaffold(
+        backgroundColor: Colors.transparent,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 350.0),
+                child: IconButton(
+                  icon: const Icon(
+                    Icons.arrow_back_ios,
+                    color: Colors.black, size: 25
+                  ),
+                  onPressed: () => Navigator.of(context).pop(),
+                ),
               ),
-              physics: const AlwaysScrollableScrollPhysics(),
-              child: Column(
-                children: [
-                  const SizedBox(
-                    height: 80,
-                  ),
-                  const Text(
-                    'Iniciar Sesión',
-                    style: TextStyle(fontSize: 30, color: Colors.black),
-                  ),
-                  Image.asset(
-                    'assets/images/Logo_ProwessAgronomia.png',
-                    height: 250,
-                    width: 250,
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 50, right: 5, top: 40),
-                      child: Text(
-                        'E-mail',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(left: 5, right: 5, top: 5),
-                    child: Column(
-                      children: const [
-
-                      ],
-                    ),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  const Align(
-                    alignment: Alignment.centerLeft,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 50, right: 5, top: 18),
-                      child: Text(
-                        'Contraseña',
-                        textAlign: TextAlign.left,
-                        style: TextStyle(
-                          fontSize: 13,
-                          color: Colors.black,
-                        ),
-                      ),
-                    ),
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 5, right: 5, top: 5),
-                  ),
-                  const SizedBox(
-                    height: 30,
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(top: 20),
-                  ),
-                  const SizedBox(
-                    height: 15,
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SingUpScreen(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            'Olvidaste tu Contraseña',
+              Image.asset(
+                'assets/images/Logo_ProwessAgronomia.png',
+                width: 250,
+                height: 250,
+              ),
+              //SizedBox(height: 7),
+              Container(
+                height: height *0.6,
+                margin: const EdgeInsets.symmetric(horizontal: 15),
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16.0),
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 55, vertical: 25),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          const Text(
+                            "Login",
                             style: TextStyle(
-                              fontSize: 15,
+                              fontWeight: FontWeight.w700,
+                              fontSize: 22,
                               color: Colors.black,
-                              fontWeight: FontWeight.bold,
+                            ),
+                          ),
+                          Container(
+                            width: 3,
+                            height: 25,
+                            color: Colors.lightBlue,
+                          ),
+                          GestureDetector(
+                            onTap: () {},
+                            child: const Text(
+                              "Signin",
+                              style: TextStyle(
+                                fontWeight: FontWeight.w700,
+                                fontSize: 22,
+                                color: Colors.black,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    //Spacer(),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 35),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          labelText: 'username',
+                          helperText: '',
+                          prefixIcon: Icon(
+                            Icons.person,
+                          ),
+                        ),
+                      ),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.symmetric(horizontal: 35),
+                      child: TextFormField(
+                        decoration: const InputDecoration(
+                          border: UnderlineInputBorder(),
+                          labelText: 'username',
+                          helperText: '',
+                          prefixIcon: Icon(
+                            Icons.lock_open,
+                          ),
+                        ),
+                      ),
+                    ),
+                    //button
+                    Container(
+                      width: width * 0.5,
+                      height: height * 0.07,
+                      decoration: BoxDecoration(
+                        gradient: const LinearGradient(
+                          begin: Alignment.topLeft,
+                          end: Alignment.bottomRight,
+                          colors: [
+                            Colors.green,
+                            Colors.white,
+                          ]
+                        ),
+                        borderRadius: BorderRadius.circular(50.0),
+                      ),
+                      child: FlatButton(
+                        child: const Text(
+                          'Login',
+                          style: TextStyle(fontSize: 20.0),
+                        ),
+                        textColor: Colors.black,
+                        onPressed: () {},
+                      ),
+                    ),
+                    const SizedBox(height: 20),
+                    Column(
+                      children: [
+                        const Text("Or Login Using"),
+                        const SizedBox(height: 15),
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 30),
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Image.asset(
+                                  "assets/images/Logo_ProwessAgronomia.png",
+                                  height: 40,
+                                ),
+                                Image.asset(
+                                  "assets/images/Logo_ProwessAgronomia.png",
+                                  height: 40,
+                                ),
+                                Image.asset("assets/images/Logo_ProwessAgronomia.png", height: 40),
+                                Image.asset("assets/images/Logo_ProwessAgronomia.png", height: 40),
+                              ],
                             ),
                           ),
                         ),
                       ],
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 5),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        MaterialButton(
-                          minWidth: 10,
-                          color: Colors.black,
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/Logo_ProwessAgronomia.png',
-                            height: 30,
-                            width: 30,
-                          ),
-                          shape: const CircleBorder(),
-                        ),
-                        MaterialButton(
-                          minWidth: 10,
-                          color: Colors.black,
-                          onPressed: () {},
-                          child: Image.asset(
-                            'assets/images/Logo_ProwessAgronomia.png',
-                            height: 30,
-                            width: 30,
-                          ),
-                          shape: const CircleBorder(),
-                        ),
-                      ],
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(top: 10),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        const Text(
-                          'Eres nuevo?  ',
-                          textAlign: TextAlign.left,
-                          style: TextStyle(
-                            fontSize: 12,
-                            color: Colors.black,
-                          ),
-                        ),
-                        GestureDetector(
-                          onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => const SingUpScreen(),
-                              ),
-                            );
-                          },
-                          child: const Text(
-                            'Registrate',
-                            style: TextStyle(
-                              fontSize: 15,
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
+                  ],
+                ),
+              )
+            ],
           ),
         ),
       ),

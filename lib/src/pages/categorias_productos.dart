@@ -3,6 +3,8 @@ import 'package:prowessagronomia/src/pages/carrito_page.dart';
 import 'package:prowessagronomia/src/widgets/barra_busqueda.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
+import 'categoria_carne_product.dart';
+
 class Categorias extends StatefulWidget{
   const Categorias({Key? key}) : super(key: key);
    @override
@@ -101,14 +103,14 @@ class _TablesMenusOpts extends StatelessWidget {
         children:  const <TableRow>[
           TableRow(
             children: [
-               _TableRowsMenus('Carne', 'assets/images/tipos-carnes.png'),
-              _TableRowsMenus('Frutas', 'assets/images/tipos-frutas.png'),
+               _TableRowsMenus('Carne', 'assets/images/tipos-carnes.png',CategoriaCarne()),
+              _TableRowsMenus('Frutas', 'assets/images/tipos-frutas.png',CategoriaCarne()),
             ],
           ),
           TableRow(
             children: [
-              _TableRowsMenus('Lácteos', 'assets/images/tipos-lacteos.png'),
-              _TableRowsMenus('Vegetales', 'assets/images/tipos-vegetales.png'),
+              _TableRowsMenus('Lácteos', 'assets/images/tipos-lacteos.png',CategoriaCarne()),
+              _TableRowsMenus('Vegetales', 'assets/images/tipos-vegetales.png',CategoriaCarne()),
             ],
           ),
         ],
@@ -120,12 +122,20 @@ class _TablesMenusOpts extends StatelessWidget {
 class _TableRowsMenus extends StatelessWidget {
   final String description;
   final String image;
-  const _TableRowsMenus(this.description, this.image);
+  final Widget direccion;
+  const _TableRowsMenus(this.description, this.image, this.direccion);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () {},
+      onTap: () {
+        Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) =>  direccion
+                    )
+                  );
+      },
       child: Padding( 
         padding: const EdgeInsets.all(8.0),
         child: Container(

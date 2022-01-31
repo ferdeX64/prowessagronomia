@@ -1,5 +1,6 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:prowessagronomia/src/pages/sign_up.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,8 +22,8 @@ class _LoginPageState extends State<LoginPage> {
           begin: Alignment.topLeft, 
           end: Alignment.bottomRight, 
           colors: [
-            Colors.white,
             Colors.green,
+            Colors.white,
           ]
         )
       ),
@@ -76,7 +77,14 @@ class _LoginPageState extends State<LoginPage> {
                             color: Colors.lightBlue,
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (BuildContext context) => const SingUpScreen()
+                                )
+                              );
+                            },
                             child: const Text(
                               "Signin",
                               style: TextStyle(

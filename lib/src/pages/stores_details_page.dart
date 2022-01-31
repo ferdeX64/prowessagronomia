@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 class StorePageDetails extends StatefulWidget {
   const StorePageDetails({Key? key}) : super(key: key);
@@ -36,12 +38,10 @@ class _StorePageDetailsState extends State<StorePageDetails> {
         padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
         child: Column(
           children: [
-            Container(
-              child: Row(
-                children: const [
-                     Text("Tienda", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))
-                ],
-              ),
+            Row(
+              children: const [
+                   Text("Tienda", style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold))
+              ],
             ),
             Container(
               padding: const EdgeInsets.symmetric(vertical: 15),
@@ -67,10 +67,8 @@ class _StorePageDetailsState extends State<StorePageDetails> {
             Row(
               children:[
                 Column(
-                  children: [
-                    Container(
-                      child: const Text("Contactos", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold)),
-                    )
+                  children: const [
+                    Text("Contactos", style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold))
                   ],
                 )
               ]

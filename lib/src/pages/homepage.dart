@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/models/home_page_model.dart';
 import 'package:prowessagronomia/src/utils/productos_home_page.dart';

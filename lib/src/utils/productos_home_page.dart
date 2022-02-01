@@ -18,6 +18,17 @@ List<ProductsShareProduct> productsImageList() {
 
   return list;
 }
+List<ProductsShareProduct> productsImageListCarne() {
+  List<ProductsShareProduct> list = [];
+
+  var list1 = ProductsShareProduct(lomoCerdo);
+  list.add(list1);
+
+  var list2 = ProductsShareProduct(pechugaPollo);
+  list.add(list2);
+
+  return list;
+}
 
 List<ProductsShareName> productsNameList() {
   List<ProductsShareName> list = [];
@@ -33,6 +44,18 @@ List<ProductsShareName> productsNameList() {
 
   return list;
 }
+List<ProductsShareName> productsNameListCarne() {
+  List<ProductsShareName> list = [];
+
+  var list1 = ProductsShareName(lomoCerdoname);
+  list.add(list1);
+
+  var list2 = ProductsShareName(pechugapolloname);
+  list.add(list2);
+
+
+  return list;
+}
 
 List<ProductsSharePrices> productsPricesList() {
   List<ProductsSharePrices> list = [];
@@ -45,6 +68,18 @@ List<ProductsSharePrices> productsPricesList() {
 
   var list3 = ProductsSharePrices(sandiaprice);
   list.add(list3);
+
+  return list;
+}
+
+List<ProductsSharePrices> productsPricesListCarne() {
+  List<ProductsSharePrices> list = [];
+
+  var list1 = ProductsSharePrices(lomoCerdoprice);
+  list.add(list1);
+
+  var list2 = ProductsSharePrices(pechugapolloprice);
+  list.add(list2);
 
   return list;
 }

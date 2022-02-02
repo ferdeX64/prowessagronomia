@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:prowessagronomia/src/pages/categoria_carne_product.dart';
 import 'package:prowessagronomia/src/pages/splash_screen.dart';
 
 void main() {

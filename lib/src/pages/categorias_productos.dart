@@ -4,6 +4,7 @@ import 'package:prowessagronomia/src/widgets/barra_busqueda.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
 import 'categoria_carne_product.dart';
+import 'categoria_fruta_product.dart';
 
 class Categorias extends StatefulWidget{
   const Categorias({Key? key}) : super(key: key);
@@ -104,7 +105,7 @@ class _TablesMenusOpts extends StatelessWidget {
           TableRow(
             children: [
                _TableRowsMenus('Carne', 'assets/images/tipos-carnes.png',CategoriaCarne()),
-              _TableRowsMenus('Frutas', 'assets/images/tipos-frutas.png',CategoriaCarne()),
+              _TableRowsMenus('Frutas', 'assets/images/tipos-frutas.png',CategoriaFruta()),
             ],
           ),
           TableRow(

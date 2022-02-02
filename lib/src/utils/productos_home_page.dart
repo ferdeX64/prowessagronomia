@@ -29,6 +29,21 @@ List<ProductsShareProduct> productsImageListCarne() {
 
   return list;
 }
+List<ProductsShareProduct> productsImageListFruta() {
+  List<ProductsShareProduct> list = [];
+
+  var list1 = ProductsShareProduct(pera);
+  list.add(list1);
+
+  var list2 = ProductsShareProduct(platano);
+  list.add(list2);
+
+  var list3 = ProductsShareProduct(sandia);
+  list.add(list3);
+
+
+  return list;
+}
 
 List<ProductsShareName> productsNameList() {
   List<ProductsShareName> list = [];
@@ -57,6 +72,21 @@ List<ProductsShareName> productsNameListCarne() {
   return list;
 }
 
+List<ProductsShareName> productsNameListFruta() {
+  List<ProductsShareName> list = [];
+
+  var list1 = ProductsShareName(peraname);
+  list.add(list1);
+
+  var list2 = ProductsShareName(platanoname);
+  list.add(list2);
+
+  var list3 = ProductsShareName(sandianame);
+  list.add(list3);
+
+
+  return list;
+}
 List<ProductsSharePrices> productsPricesList() {
   List<ProductsSharePrices> list = [];
 
@@ -80,6 +110,22 @@ List<ProductsSharePrices> productsPricesListCarne() {
 
   var list2 = ProductsSharePrices(pechugapolloprice);
   list.add(list2);
+
+  return list;
+}
+
+List<ProductsSharePrices> productsPricesListFruta() {
+  List<ProductsSharePrices> list = [];
+
+  var list1 = ProductsSharePrices(peraprice);
+  list.add(list1);
+
+  var list2 = ProductsSharePrices(platanoprice);
+  list.add(list2);
+
+  var list3 = ProductsSharePrices(sandiaprice);
+  list.add(list3);
+
 
   return list;
 }

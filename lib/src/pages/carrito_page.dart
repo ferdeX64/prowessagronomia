@@ -36,27 +36,39 @@ class _CarritoPageState extends State<CarritoPage> {
           onPressed: () => Navigator.of(context).pop(),
         )
       ),
-      
       body: ListView.separated(
           itemBuilder: (BuildContext context,int index){
             return Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: Column(
+              padding: const EdgeInsets.symmetric(horizontal:35.0, vertical: 10),
+              child: Row(
+                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  Column(
+                    children: [
+                      SizedBox(
+                         height: 100,
+                      width: 100,
+                      child: Image.asset('assets/images/sandia.jpg',
+                          fit: BoxFit.cover)
+                      ),
+                    ],
+                  ),
+                  Column(
+                     mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Row(
                     children: const[
                       Text(
-                        'Estimated Delivery Time',
+                        'Estimated Delivery Time:  ',
                         style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 12.0,
                             fontWeight: FontWeight.w600
                         ),
                       ),
                        Text(
                         '25 min',
                         style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 15.0,
                             fontWeight: FontWeight.w600
                         ),
                       )
@@ -64,12 +76,11 @@ class _CarritoPageState extends State<CarritoPage> {
                   ),
                   const SizedBox(height: 10.0),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       const Text(
-                        'Total Cost',
+                        'Total Cost: ',
                         style: TextStyle(
-                            fontSize: 20.0,
+                            fontSize: 15.0,
                             fontWeight: FontWeight.w600
                         ),
                       ),
@@ -77,13 +88,16 @@ class _CarritoPageState extends State<CarritoPage> {
                         '\$${totalPrice.toStringAsFixed(2)}',
                         style: TextStyle(
                             color: Colors.green[700],
-                            fontSize: 20.0,
+                            fontSize: 15.0,
                             fontWeight: FontWeight.w600
                         ),
                       )
                     ],
                   ),
                   const SizedBox(height: 80.0,)
+                    ],
+                  ),
+                  
                 ],
               ),
             );

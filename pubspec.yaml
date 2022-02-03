@@ -39,6 +39,7 @@ dependencies:
   flutter_svg:
   dots_indicator:
   async_button_builder: ^2.2.0+1
+  flutter_slidable: ^1.2.0
 
 dev_dependencies:
   flutter_test:

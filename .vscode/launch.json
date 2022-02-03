@@ -3,7 +3,11 @@
         {
             "name": "Flutter (lib\\src\\pages\\index.dart)",
             "type": "dart",
+<<<<<<< HEAD
+            "request": "launch",
+=======
             "request": "launch"
+>>>>>>> 8d362e1a4679eacc9cbfeab6dda22b3ff8f60d70
         }
     ]
 }

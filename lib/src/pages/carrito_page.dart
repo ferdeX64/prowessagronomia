@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_slidable/flutter_slidable.dart';
 
 
 class CarritoPage extends StatefulWidget {
@@ -38,67 +39,121 @@ class _CarritoPageState extends State<CarritoPage> {
       ),
       body: ListView.separated(
           itemBuilder: (BuildContext context,int index){
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal:35.0, vertical: 10),
-              child: Row(
-                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    children: [
-                      SizedBox(
-                         height: 100,
-                      width: 100,
-                      child: Image.asset('assets/images/sandia.jpg',
-                          fit: BoxFit.cover)
-                      ),
-                    ],
+            return Slidable(
+              key: const ValueKey(0),
+
+              // The start action pane is the one at the left or the top side.
+              startActionPane: ActionPane(
+                // A motion is a widget used to control how the pane animates.
+                motion: const ScrollMotion(),
+
+                // A pane can dismiss the Slidable.
+                //dismissible: DismissiblePane(onDismissed: () {}),
+
+                // All actions are defined in the children parameter.
+                children: const [
+                  // A SlidableAction can have an icon and/or a label.
+                  const SlidableAction(
+                    onPressed: doNothing,
+                    backgroundColor: Color(0xFFFE4A49),
+                    foregroundColor: Colors.white,
+                    icon: Icons.delete,
+                    label: 'Delete',
                   ),
-                  Column(
-                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Row(
-                    children: const[
-                      Text(
-                        'Estimated Delivery Time:  ',
-                        style: TextStyle(
-                            fontSize: 12.0,
-                            fontWeight: FontWeight.w600
-                        ),
-                      ),
-                       Text(
-                        '25 min',
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w600
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 10.0),
-                  Row(
-                    children: [
-                      const Text(
-                        'Total Cost: ',
-                        style: TextStyle(
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w600
-                        ),
-                      ),
-                      Text(
-                        '\$${totalPrice.toStringAsFixed(2)}',
-                        style: TextStyle(
-                            color: Colors.green[700],
-                            fontSize: 15.0,
-                            fontWeight: FontWeight.w600
-                        ),
-                      )
-                    ],
-                  ),
-                  const SizedBox(height: 80.0,)
-                    ],
-                  ),
-                  
+                  /*SlidableAction(
+                    onPressed: doNothing,
+                    backgroundColor: Color(0xFF21B7CA),
+                    foregroundColor: Colors.white,
+                    icon: Icons.share,
+                    label: 'Share',
+                  ),*/
                 ],
+              ),
+
+              // The end action pane is the one at the right or the bottom side.
+              // endActionPane: const ActionPane(
+              //   motion: ScrollMotion(),
+              //   children: [
+              //     SlidableAction(
+              //       // An action can be bigger than the others.
+              //       flex: 2,
+              //       onPressed: doNothing,
+              //       backgroundColor: Color(0xFF7BC043),
+              //       foregroundColor: Colors.white,
+              //       icon: Icons.archive,
+              //       label: 'Archive',
+              //     ),
+              //     SlidableAction(
+              //       onPressed: doNothing,
+              //       backgroundColor: Color(0xFF0392CF),
+              //       foregroundColor: Colors.white,
+              //       icon: Icons.save,
+              //       label: 'Save',
+              //     ),
+              //   ],
+              // ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal:25.0, vertical: 10),
+                child: Row(
+                   mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Column(
+                      children: <Widget>[
+                        SizedBox(
+                           height: 100,
+                        width: 100,
+                        child: Image.asset('assets/images/sandia.jpg',
+                            fit: BoxFit.cover)
+                        ),
+                      ],
+                    ),
+                    Column(
+                       mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Row(
+                      children: const[
+                        Text(
+                          'Estimated Delivery Time:  ',
+                          style: TextStyle(
+                              fontSize: 12.0,
+                              fontWeight: FontWeight.w600
+                          ),
+                        ),
+                         Text(
+                          '25 min',
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w600
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 10.0),
+                    Row(
+                      children: [
+                        const Text(
+                          'Total Cost: ',
+                          style: TextStyle(
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w600
+                          ),
+                        ),
+                        Text(
+                          '\$${totalPrice.toStringAsFixed(2)}',
+                          style: TextStyle(
+                              color: Colors.green[700],
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w600
+                          ),
+                        )
+                      ],
+                    ),
+                    const SizedBox(height: 80.0,)
+                      ],
+                    ),
+                    
+                  ],
+                ),
               ),
             );
           },
@@ -152,3 +207,4 @@ class _CarritoPageState extends State<CarritoPage> {
     );
   }
 }
+void doNothing(BuildContext context) {}

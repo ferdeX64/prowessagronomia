@@ -54,70 +54,47 @@ class _SingUpScreenState extends State<SingUpScreen> {
                                       bottom: size.width * .1,
                                     ),
                                     child: Text(
-                                      'SIGN IN',
+                                      'Registrarse',
                                       style: TextStyle(
-                                        fontSize: 25,
+                                        fontSize: 35,
                                         fontWeight: FontWeight.w600,
-                                        color: Colors.white.withOpacity(.8),
+                                        color: Colors.black.withOpacity(.8),
                                       ),
                                     ),
                                   ),
                                   component(
-                                    Icons.account_circle_outlined,
-                                    'User name...',
-                                    false,
-                                    false,
-                                  ),
-                                  component(
-                                    Icons.email_outlined,
-                                    'Email...',
-                                    false,
-                                    true,
-                                  ),
-                                  component(
                                     Icons.lock_outline,
-                                    'Password...',
+                                    'Correo Electrónico...',
                                     true,
                                     false,
                                   ),
-                                  Row(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceAround,
-                                    children: [
-                                      RichText(
-                                        text: TextSpan(
-                                          text: 'Forgotten password!',
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () {
-                                              HapticFeedback.lightImpact();
-                                              Fluttertoast.showToast(
-                                                msg:
-                                                    'Forgotten password! button pressed',
-                                              );
-                                            },
-                                        ),
-                                      ),
-                                      RichText(
-                                        text: TextSpan(
-                                          text: 'Create a new Account',
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                          ),
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () {
-                                              HapticFeedback.lightImpact();
-                                              Fluttertoast.showToast(
-                                                msg:
-                                                    'Create a new Account button pressed',
-                                              );
-                                            },
-                                        ),
-                                      ),
-                                    ],
+                                    component(
+                                    Icons.lock_outline,
+                                    'Contraseña...',
+                                    true,
+                                    false,
                                   ),
+                                  component(
+                                    Icons.account_circle_outlined,
+                                    'Nombre y Apellido...',
+                                    false,
+                                    false,
+                                  ),
+                                  
+                                  component(
+                                    Icons.store,
+                                    'Nombre de la Tienda...',
+                                    false,
+                                    true,
+                                  ),
+                                    component(
+                                    Icons.phone,
+                                    'Teléfono...',
+                                    false,
+                                    true,
+                                  ),
+                                  
+                                  
                                   SizedBox(height: size.width * .3),
                                   InkWell(
                                     splashColor: Colors.transparent,
@@ -142,7 +119,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
                                       child: const Text(
                                         'Sing-In',
                                         style: TextStyle(
-                                          color: Colors.white,
+                                          color: Colors.black,
                                           fontSize: 20,
                                           fontWeight: FontWeight.w600,
                                         ),
@@ -183,21 +160,21 @@ class _SingUpScreenState extends State<SingUpScreen> {
       ),
       child: TextField(
         style: TextStyle(
-          color: Colors.white.withOpacity(.9),
+          color: Colors.black.withOpacity(.9),
         ),
         obscureText: isPassword,
         keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
         decoration: InputDecoration(
           prefixIcon: Icon(
             icon,
-            color: Colors.white.withOpacity(.8),
+            color: Colors.black.withOpacity(.8),
           ),
           border: InputBorder.none,
           hintMaxLines: 1,
           hintText: hintText,
           hintStyle: TextStyle(
             fontSize: 14,
-            color: Colors.white.withOpacity(.5),
+            color: Colors.black.withOpacity(.5),
           ),
         ),
       ),

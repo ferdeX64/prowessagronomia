@@ -81,7 +81,7 @@ class _HomepageState extends State<Homepage> {
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
                 itemBuilder: (BuildContext context, int index) => Container(
-                  margin: const EdgeInsets.only(bottom: 30, left:10,right: 20,top:20),
+                  margin: const EdgeInsets.only(bottom: 30, left:20,right: 20,top:20),
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
                     color: const Color.fromRGBO(109, 104, 117,0.3),

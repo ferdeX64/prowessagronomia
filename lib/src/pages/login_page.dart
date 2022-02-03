@@ -13,6 +13,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final bool _obscureText = true;
   @override
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
@@ -39,13 +40,14 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       Expanded(
                         flex: 7,
-                        child: ClipRRect(
+                        child: ClipRRect(                         
                           borderRadius: BorderRadius.circular(30),
                           child: BackdropFilter(
                             filter: ImageFilter.blur(sigmaY: 25, sigmaX: 25),
                             child: SizedBox(
                               width: size.width * .9,
                               child: Column(
+                                
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
@@ -63,25 +65,96 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ),
                                   ),
-                                  component(
-                                    Icons.account_circle_outlined,
-                                    'Usuario...',
-                                    false,
-                                    false,
+                                  Container(
+                                    height: size.width / 8,
+                                    width: size.width / 1.25,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(right: size.width / 30),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(.1),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const TextField(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
+                                      obscureText: false,
+                                      keyboardType: false ? TextInputType.emailAddress : TextInputType.text,
+                                      decoration: InputDecoration(
+                                        prefixIcon: Icon(
+                                          Icons.account_circle_outlined,
+                                          color: Colors.black,
+                                        ),
+                                        border: InputBorder.none,
+                                        hintMaxLines: 1,
+                                        hintText: 'Usuario...',
+                                        hintStyle: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ),        
+                                      ),
+                                    ),
                                   ),
-                                  component(
-                                    Icons.email_outlined,
-                                    'Correo...',
-                                    false,
-                                    true,
+                                  Container(
+                                    height: size.width / 8,
+                                    width: size.width / 1.25,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(right: size.width / 30),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(.1),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: const TextField(
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                      ),
+                                      obscureText: false,
+                                      keyboardType: true ? TextInputType.emailAddress : TextInputType.text,
+                                      decoration: InputDecoration(
+                                        prefixIcon: Icon(
+                                          Icons.email_outlined,
+                                          color: Colors.black,
+                                        ),
+                                        border: InputBorder.none,
+                                        hintMaxLines: 1,
+                                        hintText: 'Correo...',
+                                        hintStyle: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ),        
+                                      ),
+                                    ),
                                   ),
-                                  component(
-                                    Icons.lock_outline,
-                                    'Contraseña...',
-                                    true,
-                                    false,
+                                  Container(
+                                    height: size.width / 8,
+                                    width: size.width / 1.25,
+                                    alignment: Alignment.center,
+                                    padding: EdgeInsets.only(right: size.width / 30),
+                                    decoration: BoxDecoration(
+                                      color: Colors.black.withOpacity(.1),
+                                      borderRadius: BorderRadius.circular(20),
+                                    ),
+                                    child: TextField(
+                                      style: const TextStyle(
+                                        color: Colors.black,
+                                      ),
+                                      obscureText: _obscureText,
+                                      keyboardType: true ? TextInputType.emailAddress : TextInputType.text,
+                                      decoration: const InputDecoration(
+                                        prefixIcon: Icon(
+                                          Icons.lock_outline,
+                                          color: Colors.black,
+                                        ),
+                                        border: InputBorder.none,
+                                        hintMaxLines: 1,
+                                        hintText: 'Contraseña...',
+                                        hintStyle: TextStyle(
+                                          fontSize: 14,
+                                          color: Colors.black,
+                                        ), 
+                                      ),
+                                    ),
                                   ),
-                                  
                                   Row(
                                     mainAxisAlignment:
                                         MainAxisAlignment.spaceAround,
@@ -204,18 +277,7 @@ class _LoginPageState extends State<LoginPage> {
           hintStyle: const TextStyle(
             fontSize: 14,
             color: Colors.black,
-          ),
-          suffixIcon: IconButton(
-            onPressed: () {
-              isPassword = !isPassword;
-              setState(() {});
-            },
-            icon: Icon(
-              isPassword
-                  ? Icons.visibility
-                  : Icons.visibility_off,
-            )
-          ),
+          ),        
         ),
       ),
     );
@@ -232,3 +294,5 @@ class MyBehavior extends ScrollBehavior {
     return child;
   }
 }
+
+

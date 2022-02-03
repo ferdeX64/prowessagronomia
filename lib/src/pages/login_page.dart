@@ -25,13 +25,13 @@ class _LoginPageState extends State<LoginPage> {
             height: size.height,
             child: Stack(
               children: [
-                SizedBox(
-                  height: size.height,
-                  child: Image.asset(
-                    'assets/images/Logo_ProwessAgronomia.png',
-                    fit: BoxFit.fitHeight,
-                  ),
-                ),
+                // SizedBox(
+                //   height: size.height,
+                //   child: Image.asset(
+                //     'assets/images/Logo_ProwessAgronomia.png',
+                //     fit: BoxFit.fitWidth,
+                //   ),
+                // ),
                 Center(
                   child: Column(
                     children: [
@@ -39,30 +39,44 @@ class _LoginPageState extends State<LoginPage> {
                         child: SizedBox(),
                       ),
                       Expanded(
-                        flex: 7,
+                        flex: 9,
                         child: ClipRRect(                         
                           borderRadius: BorderRadius.circular(30),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaY: 25, sigmaX: 25),
+                          child: Container(
+                            decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent[400]!.withOpacity(.5),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
                             child: SizedBox(
                               width: size.width * .9,
                               child: Column(
-                                
                                 mainAxisAlignment:
                                     MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.only(
-                                      top: size.width * .15,
-                                      bottom: size.width * .1,
+                                      top: size.width * .05,
+                                      bottom: size.width * .05,
                                     ),
                                     child: const Text(
                                       'Iniciar Sesión',
                                       style: TextStyle(
                                         fontSize: 35,
-                                        fontWeight: FontWeight.w600,
+                                        fontWeight: FontWeight.w500,
+                                        fontStyle: FontStyle.italic,
                                         color: Colors.black,
                                       ),
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: const EdgeInsets.only(
+                                      top: 0,
+                                      bottom: 0,
+                                    ),
+                                    child: Image.asset(
+                                      'assets/images/Logo_ProwessAgronomia.png',
+                                      width: 250,
+                                      height: 250,
                                     ),
                                   ),
                                   Container(
@@ -79,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                                         color: Colors.black,
                                       ),
                                       obscureText: false,
-                                      keyboardType: false ? TextInputType.emailAddress : TextInputType.text,
+                                      keyboardType: TextInputType.text,
                                       decoration: InputDecoration(
                                         prefixIcon: Icon(
                                           Icons.account_circle_outlined,
@@ -104,42 +118,12 @@ class _LoginPageState extends State<LoginPage> {
                                       color: Colors.black.withOpacity(.1),
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    child: const TextField(
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                      ),
-                                      obscureText: false,
-                                      keyboardType: true ? TextInputType.emailAddress : TextInputType.text,
-                                      decoration: InputDecoration(
-                                        prefixIcon: Icon(
-                                          Icons.email_outlined,
-                                          color: Colors.black,
-                                        ),
-                                        border: InputBorder.none,
-                                        hintMaxLines: 1,
-                                        hintText: 'Correo...',
-                                        hintStyle: TextStyle(
-                                          fontSize: 14,
-                                          color: Colors.black,
-                                        ),        
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    height: size.width / 8,
-                                    width: size.width / 1.25,
-                                    alignment: Alignment.center,
-                                    padding: EdgeInsets.only(right: size.width / 30),
-                                    decoration: BoxDecoration(
-                                      color: Colors.black.withOpacity(.1),
-                                      borderRadius: BorderRadius.circular(20),
-                                    ),
                                     child: TextField(
                                       style: const TextStyle(
                                         color: Colors.black,
                                       ),
                                       obscureText: _obscureText,
-                                      keyboardType: true ? TextInputType.emailAddress : TextInputType.text,
+                                      keyboardType: TextInputType.text,
                                       decoration: const InputDecoration(
                                         prefixIcon: Icon(
                                           Icons.lock_outline,
@@ -163,13 +147,13 @@ class _LoginPageState extends State<LoginPage> {
                                         text: TextSpan(
                                           text: '¿Olvidaste tu contraseña?',
                                           style: const TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                           ),
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
                                               HapticFeedback.lightImpact();
                                               Fluttertoast.showToast(
-                                                msg:'¿Olvidaste tu contraseña? boton presionado',
+                                                msg:'Boton presionado - ¿Olvidaste tu contraseña?',
                                               );
                                             },
                                         ),
@@ -178,7 +162,7 @@ class _LoginPageState extends State<LoginPage> {
                                         text: TextSpan(
                                           text: 'Crear una nueva cuenta',
                                           style: const TextStyle(
-                                            color: Colors.white,
+                                            color: Colors.black,
                                           ),
                                           recognizer: TapGestureRecognizer()
                                           ..onTap = () {
@@ -198,14 +182,14 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(height: size.width * .3),
+                                  
                                   InkWell(
                                     splashColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () {
                                       HapticFeedback.lightImpact();
                                       Fluttertoast.showToast(
-                                        msg: 'Sign-In button pressed',
+                                        msg: 'Boton Presionado Acceder',
                                       );
                                     },
                                     child: Container(
@@ -220,10 +204,10 @@ class _LoginPageState extends State<LoginPage> {
                                         borderRadius: BorderRadius.circular(20),
                                       ),
                                       child: const Text(
-                                        'Ingresar',
+                                        'Acceder',
                                         style: TextStyle(
-                                          color: Colors.white,
-                                          fontSize: 20,
+                                          color: Colors.black,
+                                          fontSize: 25,
                                           fontWeight: FontWeight.w600,
                                         ),
                                       ),
@@ -249,39 +233,6 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 
-  Widget component(IconData icon,String hintText,bool isPassword,bool isEmail){
-    Size size = MediaQuery.of(context).size;
-    return Container(
-      height: size.width / 8,
-      width: size.width / 1.25,
-      alignment: Alignment.center,
-      padding: EdgeInsets.only(right: size.width / 30),
-      decoration: BoxDecoration(
-        color: Colors.black.withOpacity(.1),
-        borderRadius: BorderRadius.circular(20),
-      ),
-      child: TextField(
-        style: const TextStyle(
-          color: Colors.black,
-        ),
-        obscureText: isPassword,
-        keyboardType: isEmail ? TextInputType.emailAddress : TextInputType.text,
-        decoration: InputDecoration(
-          prefixIcon: Icon(
-            icon,
-            color: Colors.black,
-          ),
-          border: InputBorder.none,
-          hintMaxLines: 1,
-          hintText: hintText,
-          hintStyle: const TextStyle(
-            fontSize: 14,
-            color: Colors.black,
-          ),        
-        ),
-      ),
-    );
-  }
 }
 
 class MyBehavior extends ScrollBehavior {
@@ -290,7 +241,7 @@ class MyBehavior extends ScrollBehavior {
     BuildContext context,
     Widget child,
     AxisDirection axisDirection,
-  ) {
+  ){
     return child;
   }
 }

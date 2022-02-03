@@ -45,6 +45,17 @@ List<ProductsShareProduct> productsImageListFruta() {
   return list;
 }
 
+List<ProductsShareProduct> productsImageListLacteos() {
+  List<ProductsShareProduct> list = [];
+
+  var list1 = ProductsShareProduct(queso);
+  list.add(list1);
+
+  var list2 = ProductsShareProduct(yogurt);
+  list.add(list2);
+
+  return list;
+}
 List<ProductsShareName> productsNameList() {
   List<ProductsShareName> list = [];
 
@@ -83,6 +94,19 @@ List<ProductsShareName> productsNameListFruta() {
 
   var list3 = ProductsShareName(sandianame);
   list.add(list3);
+
+
+  return list;
+}
+
+List<ProductsShareName> productsNameListLacteos() {
+  List<ProductsShareName> list = [];
+
+  var list1 = ProductsShareName(quesoname);
+  list.add(list1);
+
+  var list2 = ProductsShareName(yogurtname);
+  list.add(list2);
 
 
   return list;
@@ -126,6 +150,18 @@ List<ProductsSharePrices> productsPricesListFruta() {
   var list3 = ProductsSharePrices(sandiaprice);
   list.add(list3);
 
+
+  return list;
+}
+
+List<ProductsSharePrices> productsPricesListLacteos() {
+  List<ProductsSharePrices> list = [];
+
+  var list1 = ProductsSharePrices(quesoprice);
+  list.add(list1);
+
+  var list2 = ProductsSharePrices(yogurtprice);
+  list.add(list2);
 
   return list;
 }

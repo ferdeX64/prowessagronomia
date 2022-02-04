@@ -43,17 +43,17 @@ class _CarritoPageState extends State<CarritoPage> {
               key: const ValueKey(0),
 
               // The start action pane is the one at the left or the top side.
-              startActionPane: ActionPane(
+              startActionPane: const ActionPane(
                 // A motion is a widget used to control how the pane animates.
-                motion: const ScrollMotion(),
+                motion: ScrollMotion(),
 
                 // A pane can dismiss the Slidable.
                 //dismissible: DismissiblePane(onDismissed: () {}),
-
+                
                 // All actions are defined in the children parameter.
-                children: const [
+                children:  [
                   // A SlidableAction can have an icon and/or a label.
-                  const SlidableAction(
+                    SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
@@ -207,4 +207,6 @@ class _CarritoPageState extends State<CarritoPage> {
     );
   }
 }
-void doNothing(BuildContext context) {}
+void doNothing(BuildContext context) {
+  
+}

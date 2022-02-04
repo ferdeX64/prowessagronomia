@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/categorias_productos.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
 import 'package:prowessagronomia/src/pages/login_page.dart';
+import 'package:prowessagronomia/src/pages/nosotros_page.dart';
 import 'package:prowessagronomia/src/pages/tiendas_page.dart';
 import 'package:accordion/accordion.dart';
 
@@ -51,7 +52,13 @@ class MenuLateral extends StatelessWidget {
                 color: Colors.white),
               ),
               tileColor: Colors.green[600],
-              onTap: () {}),
+              onTap: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (BuildContext context) => const NosotrosPage())
+                            );
+                          }),
             ListTile(
               leading: const Icon(Icons.badge_outlined,color:Colors.white),
               title: const Text('Equipo',

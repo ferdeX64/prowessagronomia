@@ -25,13 +25,6 @@ class _LoginPageState extends State<LoginPage> {
             height: size.height,
             child: Stack(
               children: [
-                // SizedBox(
-                //   height: size.height,
-                //   child: Image.asset(
-                //     'assets/images/Logo_ProwessAgronomia.png',
-                //     fit: BoxFit.fitWidth,
-                //   ),
-                // ),
                 Center(
                   child: Column(
                     children: [

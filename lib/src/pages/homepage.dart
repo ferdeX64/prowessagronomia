@@ -1,4 +1,5 @@
 import 'package:async_button_builder/async_button_builder.dart';
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/models/home_page_model.dart';
 import 'package:prowessagronomia/src/utils/productos_home_page.dart';
@@ -18,6 +19,12 @@ class _HomepageState extends State<Homepage> {
   late List<ProductsShareProduct> mList1;
   late List<ProductsShareName> mList2;
   late List<ProductsSharePrices> mList3;
+  final List<String> images = [
+    'https://prowessagrec.com/wp-content/uploads/2021/10/espe.png',
+    'https://prowessagrec.com/wp-content/uploads/2021/10/Portada-4.jpg',
+    'https://prowessagrec.com/wp-content/uploads/2021/10/Diseno-3-Portada.jpg',
+    'https://prowessagrec.com/wp-content/uploads/2021/10/Diseno-1-Portada.jpg',
+  ];
 
   @override
   void initState() {
@@ -25,7 +32,6 @@ class _HomepageState extends State<Homepage> {
     mList1 = productsImageList();
     mList2 = productsNameList();
     mList3 = productsPricesList();
-
   }
   @override
   Widget build(BuildContext context) {
@@ -68,12 +74,52 @@ class _HomepageState extends State<Homepage> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
               const Center(
-                child: Text('Productos Populares',
+                child: Text('Inicio',
                     style: TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 35,
                       color: Colors.black),
-                      ),
+                ),
+              ),
+              const Divider(
+                height: 1,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+                color: Colors.black,
+              ),
+              CarouselSlider.builder(
+                itemCount: images.length,
+                options: CarouselOptions(
+                  autoPlay: true,
+                  aspectRatio: 1.5,
+                  enlargeCenterPage: true,
+                ),
+                itemBuilder: (context, index, realIdx) {
+                  return Center(
+                    child: Image.network(images[index],
+                      fit: BoxFit.cover,
+                      width: 500,
+                      height: 200,
+                    )
+                  );
+                },
+              ),
+              const Center(
+                child: Text('Productos Populares',
+                  style: TextStyle(
+                    fontWeight: FontWeight.w500,
+                    fontSize: 35,
+                    color: Colors.black
+                  ),
+                ),
+              ),
+              const Divider(
+                height: 1,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+                color: Colors.black,
               ),
               ListView.builder(
                 scrollDirection: Axis.vertical,

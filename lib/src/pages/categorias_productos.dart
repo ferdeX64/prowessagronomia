@@ -6,6 +6,7 @@ import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 import 'categoria_carne_product.dart';
 import 'categoria_fruta_product.dart';
 import 'categoria_lacteos_product.dart';
+import 'categoria_vegetales_product.dart';
 
 class Categorias extends StatefulWidget{
   const Categorias({Key? key}) : super(key: key);
@@ -112,7 +113,7 @@ class _TablesMenusOpts extends StatelessWidget {
           TableRow(
             children: [
               _TableRowsMenus('Lácteos', 'assets/images/tipos-lacteos.png',CategoriaLacteos()),
-              _TableRowsMenus('Vegetales', 'assets/images/tipos-vegetales.png',CategoriaCarne()),
+              _TableRowsMenus('Vegetales', 'assets/images/tipos-vegetales.png',CategoriaVerduras()),
             ],
           ),
         ],

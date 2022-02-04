@@ -5,3 +5,5 @@ const pechugapolloprice=r"$2,75";
 const peraprice=r"$1,00";
 const platanoprice=r"$1,00";
 const yogurtprice=r"$2,00";
+const lechugaprice=r"$1,00";
+const tomateprice=r"$0,35";

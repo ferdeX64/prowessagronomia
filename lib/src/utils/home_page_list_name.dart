@@ -5,3 +5,5 @@ const pechugapolloname = "Pechuga Pollo";
 const peraname = "Pera";
 const platanoname = "Plátano";
 const yogurtname = "Yogurt";
+const lechuganame = "Lechuga";
+const tomatename = "Tomate de Riñon";

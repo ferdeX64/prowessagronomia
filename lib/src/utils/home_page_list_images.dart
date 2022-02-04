@@ -5,3 +5,5 @@ const pechugaPollo="assets/images/pechuga_pollo.jpg";
 const pera="assets/images/pera.jpg";
 const platano="assets/images/platano.jpg";
 const yogurt="assets/images/yogurt.jpg";
+const tomate="assets/images/tomate_rinon.jpg";
+const lechuga="assets/images/lechuga.jpg";

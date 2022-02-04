@@ -1,5 +1,4 @@
 import 'dart:ui';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
@@ -80,7 +79,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
                                     false,
                                     false,
                                   ),
-                                  
+
                                   component(
                                     Icons.store,
                                     'Nombre de la Tienda...',
@@ -93,8 +92,6 @@ class _SingUpScreenState extends State<SingUpScreen> {
                                     false,
                                     true,
                                   ),
-                                  
-                                  
                                   SizedBox(height: size.width * .3),
                                   InkWell(
                                     splashColor: Colors.transparent,
@@ -146,7 +143,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
     );
   }
 
-  Widget component(
+Widget component(
       IconData icon, String hintText, bool isPassword, bool isEmail) {
     Size size = MediaQuery.of(context).size;
     return Container(

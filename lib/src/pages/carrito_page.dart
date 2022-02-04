@@ -41,57 +41,18 @@ class _CarritoPageState extends State<CarritoPage> {
           itemBuilder: (BuildContext context,int index){
             return Slidable(
               key: const ValueKey(0),
-
-              // The start action pane is the one at the left or the top side.
-              startActionPane: ActionPane(
-                // A motion is a widget used to control how the pane animates.
-                motion: const ScrollMotion(),
-
-                // A pane can dismiss the Slidable.
-                //dismissible: DismissiblePane(onDismissed: () {}),
-
-                // All actions are defined in the children parameter.
-                children: const [
-                  // A SlidableAction can have an icon and/or a label.
-                  const SlidableAction(
+              startActionPane: const ActionPane(
+                motion: ScrollMotion(),
+                children: [
+                  SlidableAction(
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,
                     icon: Icons.delete,
                     label: 'Delete',
                   ),
-                  /*SlidableAction(
-                    onPressed: doNothing,
-                    backgroundColor: Color(0xFF21B7CA),
-                    foregroundColor: Colors.white,
-                    icon: Icons.share,
-                    label: 'Share',
-                  ),*/
                 ],
               ),
-
-              // The end action pane is the one at the right or the bottom side.
-              // endActionPane: const ActionPane(
-              //   motion: ScrollMotion(),
-              //   children: [
-              //     SlidableAction(
-              //       // An action can be bigger than the others.
-              //       flex: 2,
-              //       onPressed: doNothing,
-              //       backgroundColor: Color(0xFF7BC043),
-              //       foregroundColor: Colors.white,
-              //       icon: Icons.archive,
-              //       label: 'Archive',
-              //     ),
-              //     SlidableAction(
-              //       onPressed: doNothing,
-              //       backgroundColor: Color(0xFF0392CF),
-              //       foregroundColor: Colors.white,
-              //       icon: Icons.save,
-              //       label: 'Save',
-              //     ),
-              //   ],
-              // ),
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal:25.0, vertical: 10),
                 child: Row(
@@ -151,7 +112,6 @@ class _CarritoPageState extends State<CarritoPage> {
                     const SizedBox(height: 80.0,)
                       ],
                     ),
-                    
                   ],
                 ),
               ),

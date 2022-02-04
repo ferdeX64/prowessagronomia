@@ -41,7 +41,6 @@ class _CarritoPageState extends State<CarritoPage> {
           itemBuilder: (BuildContext context,int index){
             return Slidable(
               key: const ValueKey(0),
-<<<<<<< HEAD
 
               // The start action pane is the one at the left or the top side.
               startActionPane: const ActionPane(
@@ -55,12 +54,6 @@ class _CarritoPageState extends State<CarritoPage> {
                 children:  [
                   // A SlidableAction can have an icon and/or a label.
                     SlidableAction(
-=======
-              startActionPane: const ActionPane(
-                motion: ScrollMotion(),
-                children: [
-                  SlidableAction(
->>>>>>> f4a59e2042ae743abcbbf416385c0b13572e9918
                     onPressed: doNothing,
                     backgroundColor: Color(0xFFFE4A49),
                     foregroundColor: Colors.white,

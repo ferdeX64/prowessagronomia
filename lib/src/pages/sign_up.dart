@@ -24,10 +24,7 @@ class _SingUpScreenState extends State<SingUpScreen> {
               children: [
                 SizedBox(
                   height: size.height,
-                  child: Image.asset(
-                    'assets/images/Logo_ProwessAgronomia.png',
-                    fit: BoxFit.fitHeight,
-                  ),
+                 
                 ),
                 Center(
                   child: Column(
@@ -38,95 +35,103 @@ class _SingUpScreenState extends State<SingUpScreen> {
                       Expanded(
                         flex: 7,
                         child: ClipRRect(
+                          
                           borderRadius: BorderRadius.circular(30),
-                          child: BackdropFilter(
-                            filter: ImageFilter.blur(sigmaY: 25, sigmaX: 25),
-                            child: SizedBox(
-                              width: size.width * .9,
-                              child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(
-                                      top: size.width * .15,
-                                      bottom: size.width * .1,
-                                    ),
-                                    child: Text(
-                                      'Registrarse',
-                                      style: TextStyle(
-                                        fontSize: 35,
-                                        fontWeight: FontWeight.w600,
-                                        color: Colors.black.withOpacity(.8),
+                            child: Container(
+                              decoration: BoxDecoration(
+                              color: Colors.lightGreenAccent[400]!.withOpacity(.5),
+                              borderRadius: BorderRadius.circular(20),
+                            ),
+                              child: SizedBox(
+                                width: size.width * .9,
+                                child: Column(
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceBetween,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsets.only(
+                                        top: size.width * .15,
+                                        bottom: size.width * .1,
+ 
                                       ),
-                                    ),
-                                  ),
-                                  component(
-                                    Icons.lock_outline,
-                                    'Correo Electrónico...',
-                                    true,
-                                    false,
-                                  ),
-                                    component(
-                                    Icons.lock_outline,
-                                    'Contraseña...',
-                                    true,
-                                    false,
-                                  ),
-                                  component(
-                                    Icons.account_circle_outlined,
-                                    'Nombre y Apellido...',
-                                    false,
-                                    false,
-                                  ),
-
-                                  component(
-                                    Icons.store,
-                                    'Nombre de la Tienda...',
-                                    false,
-                                    true,
-                                  ),
-                                    component(
-                                    Icons.phone,
-                                    'Teléfono...',
-                                    false,
-                                    true,
-                                  ),
-                                  SizedBox(height: size.width * .3),
-                                  InkWell(
-                                    splashColor: Colors.transparent,
-                                    highlightColor: Colors.transparent,
-                                    onTap: () {
-                                      HapticFeedback.lightImpact();
-                                      Fluttertoast.showToast(
-                                        msg: 'Sign-In button pressed',
-                                      );
-                                    },
-                                    child: Container(
-                                      margin: EdgeInsets.only(
-                                        bottom: size.width * .05,
-                                      ),
-                                      height: size.width / 8,
-                                      width: size.width / 1.25,
-                                      alignment: Alignment.center,
-                                      decoration: BoxDecoration(
-                                        color: Colors.black.withOpacity(.1),
-                                        borderRadius: BorderRadius.circular(20),
-                                      ),
-                                      child: const Text(
-                                        'Sing-In',
+                                      child: Text(
+                                        'Registrarse',
                                         style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20,
+                                          fontSize: 35,
                                           fontWeight: FontWeight.w600,
+                                          color: Colors.black.withOpacity(.8),
                                         ),
                                       ),
                                     ),
-                                  ),
-                                ],
+                                    component(
+                                      Icons.lock_outline,
+                                      'Correo Electrónico...',
+                                      true,
+                                      false,
+                                    ),
+                                      component(
+                                      Icons.lock_outline,
+                                      'Contraseña...',
+                                      true,
+                                      false,
+                                    ),
+                                    component(
+                                      Icons.account_circle_outlined,
+                                      'Nombre y Apellido...',
+                                      false,
+                                      false,
+                                    ),
+
+                                    component(
+                                      Icons.store,
+                                      'Nombre de la Tienda...',
+                                      false,
+                                      true,
+                                    ),
+                                      component(
+                                      Icons.phone,
+                                      'Teléfono...',
+                                      false,
+                                      true,
+                                    ),
+                                    
+                                    SizedBox(height: size.width * .3),
+                                    InkWell(
+                                      splashColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
+                                      onTap: () {
+                                        HapticFeedback.lightImpact();
+                                        Fluttertoast.showToast(
+                                          msg: 'Sign-In button pressed',
+                                        );
+                                      },
+                                      
+                                      child: Container(
+                                        margin: EdgeInsets.only(
+                                          bottom: size.width * .05,
+                                        ),
+                                        height: size.width / 8,
+                                        width: size.width / 1.25,
+                                        alignment: Alignment.center,
+                                        decoration: BoxDecoration(
+                                          color: Colors.black.withOpacity(.1),
+                                          borderRadius: BorderRadius.circular(20),
+                                        ),
+                                        child: const Text(
+                                          'Registrarse',
+                                          style: TextStyle(
+                                            color: Colors.black,
+                                            fontSize: 20,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
                               ),
                             ),
-                          ),
+                          
                         ),
                       ),
                       const Expanded(

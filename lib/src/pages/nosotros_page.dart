@@ -154,7 +154,7 @@ class NosotrosPage extends StatelessWidget {
                 children:  [
                   Container(
                     padding: const EdgeInsets.only(top: 25),
-                    child: Text("Objetivos generales", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.justify))
+                    child: const Text("Objetivos generales", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.justify))
                 ],
               ),
               Row(
@@ -189,7 +189,7 @@ class NosotrosPage extends StatelessWidget {
                 children:  [
                   Container(
                     padding: const EdgeInsets.only(top: 25),
-                    child: Text("Objetivos específicos", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.justify))
+                    child: const Text("Objetivos específicos", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.justify))
                 ],
               ),
               Row(
@@ -216,13 +216,130 @@ class NosotrosPage extends StatelessWidget {
                      style: TextStyle(fontSize: 15),textAlign: TextAlign.justify))
                 ],
               ),
-
-
-
+              const Divider(
+                height: 1,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+                color: Colors.black,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    padding: const EdgeInsets.only(top: 25, bottom: 15),
+                    child: const Text("Valores", style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),textAlign: TextAlign.justify))
+                ],
+              ),
+              Row(
+                children: const <Widget>[
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ), 
+                      Text("Responsabilidad"), 
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ),
+                  ]
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    width: 160,
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    child:  SizedBox(
+                      child: Image.asset('assets/images/responsabilidad.png',
+                          fit: BoxFit.cover)
+                          ),
+                  ),
+                ],
+              ),
+              Row(
+                children: const <Widget>[
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ), 
+                      Text("Respeto"), 
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ),
+                  ]
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    child:  SizedBox(
+                      child: Image.asset('assets/images/respeto.png',
+                          fit: BoxFit.cover)
+                          ),
+                  ),
+                ],
+              ),
+              Row(
+                children: const <Widget>[
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ), 
+                      Text("Eficiencia"), 
+                      Expanded(
+                          child: Divider(
+                            height: 1,
+                            thickness: 1,
+                            indent: 20,
+                            endIndent: 20,
+                            color: Colors.black,
+                          )
+                      ),
+                  ]
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children:  [
+                  Container(
+                    padding: const EdgeInsets.only(top: 10, bottom: 10),
+                    child:  SizedBox(
+                      child: Image.asset('assets/images/eficiencia.png',
+                          fit: BoxFit.cover)
+                          ),
+                  ),
+                ],
+              ),
             ],
           ),
         ),
-        
       ),
     );
   }

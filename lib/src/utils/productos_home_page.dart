@@ -208,3 +208,20 @@ List<ProductsSharePrices> productsPricesListVerduras() {
   return list;
 }
 
+List<ProductsShareProduct> iconsImagesList() {
+  List<ProductsShareProduct> list = [];
+
+  var list1 = ProductsShareProduct(facebook);
+  list.add(list1);
+
+  var list2 = ProductsShareProduct(twitter);
+  list.add(list2);
+
+  var list3 = ProductsShareProduct(tiktok);
+  list.add(list3);
+
+  var list4 = ProductsShareProduct(instagram);
+  list.add(list4);
+
+  return list;
+}

@@ -7,3 +7,7 @@ const platano="assets/images/platano.jpg";
 const yogurt="assets/images/yogurt.jpg";
 const tomate="assets/images/tomate_rinon.jpg";
 const lechuga="assets/images/lechuga.jpg";
+const facebook="assets/images/facebook.png";
+const instagram="assets/images/instagram.png";
+const tiktok="assets/images/tik_tok.png";
+const twitter="assets/images/twitter.png";

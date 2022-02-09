@@ -160,12 +160,10 @@ class NosotrosPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children:  [
-                  Container(
-                    child:  SizedBox(
-                      child: Image.asset('assets/images/objetivos_generales.png',
-                          fit: BoxFit.cover)
-                          ),
-                  ),
+                  SizedBox(
+                    child: Image.asset('assets/images/objetivos_generales.png',
+                        fit: BoxFit.cover)
+                        ),
                 ],
               ),
               Column(
@@ -195,12 +193,10 @@ class NosotrosPage extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Container(
-                    child:  SizedBox(
-                      child: Image.asset('assets/images/objetivos_especificos.png',
-                          fit: BoxFit.cover)
-                          ),
-                  ),
+                  SizedBox(
+                    child: Image.asset('assets/images/objetivos_especificos.png',
+                        fit: BoxFit.cover)
+                        ),
                 ],
               ),
               Column(

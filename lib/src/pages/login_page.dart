@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prowessagronomia/src/pages/password_page.dart';
+import 'package:prowessagronomia/src/pages/profile_page.dart';
 import 'package:prowessagronomia/src/pages/sign_up.dart';
 
 class LoginPage extends StatefulWidget {
@@ -188,6 +189,12 @@ class _LoginPageState extends State<LoginPage> {
                                       HapticFeedback.lightImpact();
                                       Fluttertoast.showToast(
                                         msg: 'Boton Presionado Acceder',
+                                      );
+                                      Navigator.push(
+                                          context,
+                                          MaterialPageRoute(
+                                            builder: (BuildContext context) => const ProfilePage()
+                                          )
                                       );
                                     },
                                     child: Container(

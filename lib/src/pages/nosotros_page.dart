@@ -194,7 +194,7 @@ class NosotrosPage extends StatelessWidget {
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children:  [
+                children: [
                   Container(
                     child:  SizedBox(
                       child: Image.asset('assets/images/objetivos_especificos.png',

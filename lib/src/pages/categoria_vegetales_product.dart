@@ -44,12 +44,12 @@ class _CategoriaVerdurasState extends State<CategoriaVerduras>{
             ],
           ),
           leading: IconButton(
-              icon: const Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-              onPressed: ()=> _key.currentState!.openDrawer(),
+            icon: const Icon(
+              Icons.menu,
+              color: Colors.black,
             ),
+            onPressed: ()=> _key.currentState!.openDrawer(),
+          ),
           actions: [
             IconButton(
               padding: EdgeInsets.zero,

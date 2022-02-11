@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:prowessagronomia/src/pages/form_compra_page.dart';
 
 
 class CarritoPage extends StatefulWidget {
@@ -165,7 +166,12 @@ class _CarritoPageState extends State<CarritoPage> {
                         letterSpacing: 2.0
                       ),
                     ),
-                    onPressed: (){},
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                        builder: (BuildContext context) => FormCompra()));
+                            },
                   ),
                 ],
               ),

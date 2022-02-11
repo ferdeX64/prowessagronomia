@@ -10,14 +10,33 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({Key? key}) : super(key: key);
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'ProwessAgronomia',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primaryColor: Colors.black,
+        fontFamily: 'Roboto',
+        elevatedButtonTheme: ElevatedButtonThemeData(
+          style: ElevatedButton.styleFrom(
+            primary: Colors.black,
+            shadowColor: Colors.grey,
+            elevation: 20,
+            shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.all(Radius.circular(0.0))
+            )
+          )
+        ),
+        inputDecorationTheme: InputDecorationTheme(
+          border:OutlineInputBorder(borderRadius: BorderRadius.circular(0.0))
+        ),
+        textButtonTheme: TextButtonThemeData(
+          style: TextButton.styleFrom(
+            alignment: Alignment.centerLeft,
+            primary: Colors.black,
+          ),
+        )
       ),
       home: const SplashScreen(),
     );

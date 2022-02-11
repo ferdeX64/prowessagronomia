@@ -296,7 +296,7 @@ class EquipoPage extends StatelessWidget {
                                 color: Colors.black,
                               )
                           ), 
-                          Container(
+                          SizedBox(
                             height:25,
                             child: SizedBox(
                               child: Image.asset('assets/images/user.png',
@@ -597,9 +597,6 @@ class EquipoPage extends StatelessWidget {
                         ),
                     ]
                 ),
-                
-                
-                
               ],
             ),
           ),

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
+import 'package:prowessagronomia/src/models/home_page_model.dart';
 import 'package:prowessagronomia/src/pages/form_compra_page.dart';
+import 'package:prowessagronomia/src/utils/productos_home_page.dart';
 
 
 class CarritoPage extends StatefulWidget {
@@ -11,7 +13,17 @@ class CarritoPage extends StatefulWidget {
 }
 
 class _CarritoPageState extends State<CarritoPage> {
+  late List<ProductsShareProduct> mList1;
+  late List<ProductsShareName> mList2;
+  late List<ProductsSharePrices> mList3;
 
+   @override
+  void initState() {
+    super.initState();
+    mList1 = productsImageList();
+    mList2 = productsNameList();
+    mList3 = productsPricesList();
+  }
   @override
   Widget build(BuildContext context) {
     double totalPrice = 0;
@@ -73,7 +85,7 @@ class _CarritoPageState extends State<CarritoPage> {
                         SizedBox(
                            height: 100,
                         width: 100,
-                        child: Image.asset('assets/images/sandia.jpg',
+                        child: Image.asset(mList1[index].icon,
                             fit: BoxFit.cover)
                         ),
                       ],
@@ -82,17 +94,17 @@ class _CarritoPageState extends State<CarritoPage> {
                        mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Row(
-                      children: const[
-                        Text(
-                          'Estimated Delivery Time:  ',
+                      children: [
+                         const Text(
+                          'Nombre del Producto:  ',
                           style: TextStyle(
                               fontSize: 12.0,
                               fontWeight: FontWeight.w600
                           ),
                         ),
                          Text(
-                          '25 min',
-                          style: TextStyle(
+                          mList2[index].name,
+                          style: const TextStyle(
                               fontSize: 15.0,
                               fontWeight: FontWeight.w600
                           ),
@@ -103,14 +115,14 @@ class _CarritoPageState extends State<CarritoPage> {
                     Row(
                       children: [
                         const Text(
-                          'Total Cost: ',
+                          'Costo Total: ',
                           style: TextStyle(
                               fontSize: 15.0,
                               fontWeight: FontWeight.w600
                           ),
                         ),
                         Text(
-                          '\$${totalPrice.toStringAsFixed(2)}',
+                          mList3[index].price,
                           style: TextStyle(
                               color: Colors.green[700],
                               fontSize: 15.0,
@@ -133,7 +145,7 @@ class _CarritoPageState extends State<CarritoPage> {
               color: Colors.grey,
             );
           },
-          itemCount: 5
+          itemCount: 3
       ),
       bottomSheet: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

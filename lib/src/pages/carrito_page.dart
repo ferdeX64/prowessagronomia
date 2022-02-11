@@ -170,7 +170,7 @@ class _CarritoPageState extends State<CarritoPage> {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                        builder: (BuildContext context) => FormCompra()));
+                        builder: (BuildContext context) => const FormCompra()));
                             },
                   ),
                 ],

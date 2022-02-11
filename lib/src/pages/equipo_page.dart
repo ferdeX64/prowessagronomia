@@ -1,3 +1,5 @@
+// ignore_for_file: sized_box_for_whitespace
+
 import 'package:flutter/material.dart';
 class EquipoPage extends StatelessWidget {
   const EquipoPage({Key? key}) : super(key: key);

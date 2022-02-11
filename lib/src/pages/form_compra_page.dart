@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FormCompra extends StatefulWidget {
-  FormCompra({Key? key}) : super(key: key);
+  const FormCompra({Key? key}) : super(key: key);
 
   @override
   State<FormCompra> createState() => _FormCompraState();
@@ -217,6 +217,7 @@ class _FormCompraState extends State<FormCompra> {
                   child: Container(
                     width: 220,
                     padding:  const EdgeInsets.only(top: 5.0, bottom: 25),
+                  // ignore: deprecated_member_use
                   child: RaisedButton(
                     padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
                     color: Colors.lightGreen, // background
@@ -240,24 +241,159 @@ class _FormCompraState extends State<FormCompra> {
                 ),
                 const Text("Notas", style: TextStyle(color:Colors.black54,fontSize: 20, fontWeight:FontWeight.bold)),
                 Container(
-                  padding: const EdgeInsets.only(bottom: 20, top: 10),
+                  padding: const EdgeInsets.only(bottom: 25, top: 10),
                   child: Row(
                     children: const [
                       Flexible(
                         child: TextField(
+                              maxLines: 2,
                               decoration: InputDecoration(
                                 icon: Icon(
-                                    Icons.ad_units  ,
+                                    Icons.note_alt_outlined  ,
                                     size: 30,
                                     color: Colors.black,
                                 ),
-                                hintText: 'Celular',
+                                hintText: 'Notas sobre tu pedido, por ejemplo notas especiales sobre la entrega',
                               )
                             )
                       )
                   ],),
                 ),
-          
+                const Text("Tu orden", style: TextStyle(color:Colors.black54,fontSize: 20, fontWeight:FontWeight.bold)),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Producto", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("Subtotal", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ),  
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                   color: Colors.black,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Lomo de cerdito X1", style: TextStyle(color:Colors.black,fontSize: 18)),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(bottom: 10),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Vendedor: AgroNatureShop", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("\$3.50", style: TextStyle(color:Colors.black,fontSize: 18)),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                   color: Colors.black,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Subtotal", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("\$3.50", style: TextStyle(color:Colors.black,fontSize: 18)),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ), 
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                   color: Colors.black,
+                ),
+                Container(
+                  padding: const EdgeInsets.symmetric(vertical: 15),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Shipping: AgroNatureShop", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("Precio fijo", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+
+                        ],
+                      )
+                    ],
+                  ),
+                ), 
+                const Divider(
+                  height: 1,
+                  thickness: 1,
+                   color: Colors.black,
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top: 15, bottom:20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: const[
+                          Text("Total", style: TextStyle(color:Colors.black,fontSize: 18, fontWeight:FontWeight.bold)),
+                        ],
+                      ),
+                      Column(
+                        children: const [
+                          Text("\$3.50", style: TextStyle(color:Colors.black,fontSize: 18)),
+                        ],
+                      )
+                    ],
+                  ),
+                ),
+                const Text("Método de pago", style: TextStyle(color:Colors.black54,fontSize: 20, fontWeight:FontWeight.bold)),
                 
               ],
             ),

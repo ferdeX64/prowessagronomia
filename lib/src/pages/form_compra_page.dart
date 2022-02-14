@@ -8,6 +8,8 @@ class FormCompra extends StatefulWidget {
 }
 
 class _FormCompraState extends State<FormCompra> {
+  int selectedValue=0;
+  bool? _checked=false;
   @override
   Widget build(BuildContext context) {
     return 
@@ -218,25 +220,24 @@ class _FormCompraState extends State<FormCompra> {
                     width: 220,
                     padding:  const EdgeInsets.only(top: 5.0, bottom: 25),
                   // ignore: deprecated_member_use
-                  child: RaisedButton(
-                    padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
-                    color: Colors.lightGreen, // background
-                    textColor: Colors.white, // foreground
-                    onPressed: () { },
-                    child: Expanded(
-                      child: Row(
-                        children: const[
-                          Icon(
-                              Icons.location_on_outlined ,
-                              size: 30,
-                              color: Colors.white,
-                          ),
-                          Text('Usar mi ubicacion',style: TextStyle(fontSize: 18),),
-                        ],
+                    child: RaisedButton(
+                      padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
+                      color: Colors.lightGreen, // background
+                      textColor: Colors.white, // foreground
+                      onPressed: () { },
+                      child: Expanded(
+                        child: Row(
+                          children: const[
+                            Icon(
+                                Icons.location_on_outlined ,
+                                size: 30,
+                                color: Colors.white,
+                            ),
+                            Text('Usar mi ubicacion',style: TextStyle(fontSize: 18),),
+                          ],
+                        ),
                       ),
-                    ),
-                  )
-
+                    )
                   ),
                 ),
                 const Text("Notas", style: TextStyle(color:Colors.black54,fontSize: 20, fontWeight:FontWeight.bold)),
@@ -394,7 +395,62 @@ class _FormCompraState extends State<FormCompra> {
                   ),
                 ),
                 const Text("Método de pago", style: TextStyle(color:Colors.black54,fontSize: 20, fontWeight:FontWeight.bold)),
+                Container(
+                  padding: const EdgeInsets.only(top:20),
+                  child: RadioListTile<int>(
+                    value: 0, 
+                    groupValue: selectedValue,
+                    title: const Text("Transeferencia Bancaria directa", style: TextStyle( fontWeight: FontWeight.bold)),
+                    subtitle: const Text("Realiza tu pago directamente en nuestra cuenta bancaria. Por favor usar el número del pedido como referencia de pago. Tu pedido no se procesar hasta que se haya recibido el importante en nuestra cuenta."
+                    ,style: TextStyle(fontSize: 15),textAlign: TextAlign.justify),
+                    onChanged: (value)=>setState(()=>selectedValue=0)
+                  ),
+                ),
+                Container(
+                  padding: const EdgeInsets.only(top:20, bottom: 20),
+                  child: RadioListTile<int>(
+                    value: 1, 
+                    groupValue: selectedValue,
+                    title: const Text("Paypal Adaptive", style: TextStyle( fontWeight: FontWeight.bold)),
+                    subtitle: const Text("Pague a través de Paypal Adaptive; puede pagar con su tarjeta de crédito si no tiene cuenta de paypal.",style: TextStyle(fontSize: 15),textAlign: TextAlign.justify),
+                    onChanged: (value)=>setState(()=>selectedValue=1)
+                  ),
+                ),
+                CheckboxListTile(
+                  controlAffinity: ListTileControlAffinity.leading,
+                  title: const Text("He leído y estoy de acuerdo con los términos y condiciones de la app."),
+                  value: _checked, 
+                  onChanged: (value){
+                    setState(() {
+                      _checked=value;
+                    });
+                  }
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(top:20),
+                      // ignore: deprecated_member_use
+                      child: RaisedButton(
+                        padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
+                        color: Colors.lightGreen, // background
+                        textColor: Colors.white, // foreground
+                        onPressed: () { },
+                        child: Expanded(
+                          child: Row(
+                            children: const[
+                              
+                              Text('Realizar pedido',style: TextStyle(fontSize: 18),),
+                            ],
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                )
                 
+              
               ],
             ),
           ),

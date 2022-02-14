@@ -63,57 +63,63 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: <Widget>[
-                  const SizedBox(
-                      width: 320,
-                      child: Text(
-                        "What's Your Phone Number?",
-                        style:
-                            TextStyle(fontSize: 22, fontWeight: FontWeight.bold),
-                      )),
+                  const Padding(
+                    padding: EdgeInsets.only(top: 25),
+                      child: Center(
+                        child: Text(
+                          "Ingrese su numero de telefono",
+                          style:
+                              TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold
+                              ),
+                        )
+                    ),
+                   ),
                   Padding(
                       padding: const EdgeInsets.only(top: 40),
                       child: SizedBox(
                           height: 100,
                           width: 320,
                           child: TextFormField(
-                            // Handles Form Validation
                             validator: (value) {
                               if (value == null || value.isEmpty) {
-                                return 'Please enter your phone number';
+                                return 'Porfavor ingrese su numero de telefono';
                               } else if (isAlpha(value)) {
-                                return 'Only Numbers Please';
+                                return 'Solo numeros porfavor';
                               } else if (value.length < 10) {
-                                return 'Please enter a VALID phone number';
+                                return 'Porfavor Ingrese un numero VALIDO';
                               }
                               return null;
                             },
                             controller: phoneController,
                             decoration: const InputDecoration(
-                              labelText: 'Your Phone Number',
+                              labelText: 'Número Telefono',
                             ),
                           ))),
                   Padding(
-                      padding: const EdgeInsets.only(top: 150),
-                      child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: SizedBox(
-                            width: 320,
-                            height: 50,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Validate returns true if the form is valid, or false otherwise.
-                                if (_formKey.currentState!.validate() &&
-                                    isNumeric(phoneController.text)) {
-                                  updateUserValue(phoneController.text);
-                                  Navigator.pop(context);
-                                }
-                              },
-                              child: const Text(
-                                'Update',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ),
-                          )))
+                    padding: const EdgeInsets.only(top: 25),
+                    child: Align(
+                      alignment: Alignment.bottomCenter,
+                      child: SizedBox(
+                        width: 150,
+                        height: 50,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            if (_formKey.currentState!.validate() &&
+                                isNumeric(phoneController.text)) {
+                              updateUserValue(phoneController.text);
+                              Navigator.pop(context);
+                            }
+                          },
+                          child: const Text(
+                            'Actualizar',
+                            style: TextStyle(fontSize: 15),
+                          ),
+                        ),
+                      )
+                    )
+                  )
                 ]),
           )),
     );

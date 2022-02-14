@@ -153,7 +153,7 @@ class _LoginPageState extends State<LoginPage> {
                                               Navigator.push(
                                                  context,
                                                   MaterialPageRoute(
-                                                   builder: (BuildContext context) => const PasswordPage()));
+                                                   builder: (BuildContext context) => const RefreshPasswordPage()));
                                             },
                                         ),
                                       ),

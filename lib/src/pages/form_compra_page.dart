@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/confirmacion_compra.dart';
+import 'package:prowessagronomia/src/pages/gracias_page.dart';
 
 class FormCompra extends StatefulWidget {
   const FormCompra({Key? key}) : super(key: key);
@@ -426,37 +428,35 @@ class _FormCompraState extends State<FormCompra> {
                     });
                   }
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.end,
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(top:20),
-                      // ignore: deprecated_member_use
-                      child: RaisedButton(
-                        padding:  const EdgeInsets.symmetric(vertical: 10,horizontal:20),
-                        color: Colors.lightGreen, // background
-                        textColor: Colors.white, // foreground
-                        onPressed: () { },
-                        child: Expanded(
-                          child: Row(
-                            children: const[
-                              
-                              Text('Realizar pedido',style: TextStyle(fontSize: 18),),
-                            ],
+                Padding(
+                  padding: const EdgeInsets.only(top: 20),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                        ElevatedButton(
+                          style: ElevatedButton.styleFrom(
+                            primary: Colors.lightGreen,
+                            shape: const StadiumBorder(),
+                            elevation: 6.0,
                           ),
-                        ),
-                      ),
-                    )
-                  ],
+                          child: Container(
+                            padding: const EdgeInsets.all(15),
+                            child: const Text("Realizar pedido",style: TextStyle(fontSize: 18))
+                          ),
+                          onPressed: (){
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (BuildContext context) =>  const OnboardingScreenThree()));
+                          },
+                        )   
+                    ],
+                  ),
                 )
-                
-              
               ],
             ),
           ),
         ),
-    
       );
-    
   }
 }

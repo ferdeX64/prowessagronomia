@@ -68,35 +68,37 @@ class EditPhoneFormPageState extends State<EditPhoneFormPage> {
                       child: Center(
                         child: Text(
                           "Ingrese su numero de telefono",
-                          style:
-                              TextStyle(
-                                fontSize: 22,
-                                fontWeight: FontWeight.bold
-                              ),
+                          style:TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.bold
+                          ),
                         )
                     ),
-                   ),
+                  ),
                   Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: SizedBox(
-                          height: 100,
-                          width: 320,
-                          child: TextFormField(
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Porfavor ingrese su numero de telefono';
-                              } else if (isAlpha(value)) {
-                                return 'Solo numeros porfavor';
-                              } else if (value.length < 10) {
-                                return 'Porfavor Ingrese un numero VALIDO';
-                              }
-                              return null;
-                            },
-                            controller: phoneController,
-                            decoration: const InputDecoration(
-                              labelText: 'Número Telefono',
-                            ),
-                          ))),
+                    padding: const EdgeInsets.only(top: 40),
+                    child: SizedBox(
+                      height: 100,
+                      width: 320,
+                      child: TextFormField(
+                        keyboardType: TextInputType.number,
+                        validator: (value) {
+                          if (value == null || value.isEmpty) {
+                            return 'Porfavor ingrese su numero de telefono';
+                          } else if (isAlpha(value)) {
+                            return 'Solo numeros porfavor';
+                          } else if (value.length < 10) {
+                            return 'Porfavor Ingrese un numero VALIDO';
+                          }
+                          return null;
+                        },
+                        controller: phoneController,
+                        decoration: const InputDecoration(
+                          labelText: 'Número Telefono',
+                        ),
+                      )
+                    )
+                  ),
                   Padding(
                     padding: const EdgeInsets.only(top: 25),
                     child: Align(

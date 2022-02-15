@@ -103,8 +103,7 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                       }
                       return null;
                     },
-                    decoration:
-                        const InputDecoration(labelText: 'Apellido'),
+                    decoration:const InputDecoration(labelText: 'Apellido'),
                     controller: secondNameController,
                   )
                 )
@@ -123,8 +122,9 @@ class EditNameFormPageState extends State<EditNameFormPage> {
                                 secondNameController.text)) {
                           updateUserValue(firstNameController.text +
                               " " +
-                              secondNameController.text);
-                        Navigator.pop(context);
+                              secondNameController.text
+                          );
+                          Navigator.pop(context);
                         }
                       },
                       child: const Text(

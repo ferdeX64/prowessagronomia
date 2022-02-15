@@ -30,7 +30,7 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-          appBar: AppBar(
+        appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: Colors.lightGreenAccent,
           title: Row(
@@ -52,62 +52,72 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
             onPressed: () => Navigator.of(context).pop(),
           )
         ),
-          body: Form(
-            key: _formKey,
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: <Widget>[
-                  const SizedBox(
-                      width: 320,
-                      child: Text(
-                        "What's your email?",
-                        style:
-                            TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
-                        textAlign: TextAlign.left,
-                      )),
-                  Padding(
-                      padding: const EdgeInsets.only(top: 40),
-                      child: SizedBox(
-                          height: 100,
-                          width: 320,
-                          child: TextFormField(
-                            // Handles Form Validation
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter your email.';
-                              }
-                              return null;
-                            },
-                            decoration: const InputDecoration(
-                                labelText: 'Your email address'),
-                            controller: emailController,
-                          ))),
-                  Padding(
-                      padding: const EdgeInsets.only(top: 150),
-                      child: Align(
-                          alignment: Alignment.bottomCenter,
-                          child: SizedBox(
-                            width: 320,
-                            height: 50,
-                            child: ElevatedButton(
-                              onPressed: () {
-                                // Validate returns true if the form is valid, or false otherwise.
-                                if (_formKey.currentState!.validate() &&
-                                    EmailValidator.validate(
-                                        emailController.text)) {
-                                  updateUserValue(emailController.text);
-                                  Navigator.pop(context);
-                                }
-                              },
-                              child: const Text(
-                                'Update',
-                                style: TextStyle(fontSize: 15),
-                              ),
-                            ),
-                          )))
-                ]),
-          )),
+        body: Form(
+          key: _formKey,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(top: 50),
+                child: Center(
+                  child: Text(
+                    "Ingrese su Correo",
+                    style:TextStyle(
+                      fontSize: 25,
+                      fontWeight: FontWeight.bold
+                    ),
+                    textAlign: TextAlign.left,
+                  )
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: SizedBox(
+                  height: 100,
+                  width: 320,
+                  child: TextFormField(
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Por favor ingrese su correo';
+                      }
+                      return null;
+                    },
+                    decoration: const InputDecoration(
+                      labelText: 'Su Correo Electronico'
+                    ),
+                    controller: emailController,
+                  )
+                )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 50),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    width: 320,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        if (_formKey.currentState!.validate() && EmailValidator.validate(
+                          emailController.text
+                        )) {
+                          updateUserValue(emailController.text);
+                          Navigator.pop(context);
+                        }
+                      },
+                      child: const Text(
+                        'Actualizar',
+                        style: TextStyle(fontSize: 15),
+                      ),
+                    ),
+                  )
+                )
+              )
+            ]
+          ),
+        )
+      ),
     );
   }
 }

@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:prowessagronomia/src/pages/confirmacion_compra.dart';
-import 'package:prowessagronomia/src/pages/gracias_page.dart';
 
 class FormCompra extends StatefulWidget {
   const FormCompra({Key? key}) : super(key: key);

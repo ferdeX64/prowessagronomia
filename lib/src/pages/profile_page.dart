@@ -5,6 +5,7 @@ import 'package:prowessagronomia/src/pages/edit_email.dart';
 import 'package:prowessagronomia/src/pages/edit_image.dart';
 import 'package:prowessagronomia/src/pages/edit_name.dart';
 import 'package:prowessagronomia/src/pages/edit_phone.dart';
+import 'package:prowessagronomia/src/pages/notificaciones_page.dart';
 import 'package:prowessagronomia/src/user/user.dart';
 import 'package:prowessagronomia/src/user/user_data.dart';
 import 'package:prowessagronomia/src/widgets/display_image_widget.dart';
@@ -64,7 +65,11 @@ class _ProfilePageState extends State<ProfilePage> {
               ),
               ListTile(
                 leading: const Icon(Icons.doorbell),
-                onTap: () {},
+                onTap: () {Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (BuildContext context) => const NotificacionesPage())
+                );},
                 title: const Text("Notificaciones"),
               ),
             ],

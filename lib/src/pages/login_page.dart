@@ -45,8 +45,7 @@ class _LoginPageState extends State<LoginPage> {
                             child: SizedBox(
                               width: size.width * .9,
                               child: Column(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceBetween,
+                                mainAxisAlignment:MainAxisAlignment.spaceBetween,
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.only(
@@ -167,8 +166,7 @@ class _LoginPageState extends State<LoginPage> {
                                           ..onTap = () {
                                             HapticFeedback.lightImpact();
                                             Fluttertoast.showToast(
-                                              msg:
-                                                  'Ingrese sus datos para crear la Cuenta',
+                                              msg:'Ingrese sus datos para crear la Cuenta',
                                             );
                                             Navigator.push(
                                               context,
@@ -181,14 +179,13 @@ class _LoginPageState extends State<LoginPage> {
                                       ),
                                     ],
                                   ),
-                                  
                                   InkWell(
                                     splashColor: Colors.transparent,
                                     highlightColor: Colors.transparent,
                                     onTap: () {
                                       HapticFeedback.lightImpact();
                                       Fluttertoast.showToast(
-                                        msg: 'Boton Presionado Acceder',
+                                        msg: 'Se ha Iniciado Sesión Correctamente',
                                       );
                                       Navigator.push(
                                           context,

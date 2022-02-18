@@ -20,12 +20,56 @@ class ProfilePage extends StatefulWidget {
 class _ProfilePageState extends State<ProfilePage> {
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _key = GlobalKey(); 
+    final GlobalKey<ScaffoldState> _key = GlobalKey();
     final user = UserData.myUser;
     return SafeArea(
       child: Scaffold(
         key: _key,
         drawer: const MenuLateral(),
+        endDrawer: Drawer(
+          child: ListView(
+            children: [
+              DrawerHeader(
+                  decoration: const BoxDecoration(
+                    color: Colors.lightGreenAccent,
+                  ),
+                  child: Column(children: [
+                    Expanded(
+                      child: Image.asset(
+                          'assets/images/Logo_ProwessAgronomia.png'),
+                    ),
+                    const SizedBox(
+                      height: 10.0,
+                    ),
+                  ])),
+              ListTile(
+                leading: const Icon(Icons.redeem),
+                onTap: () {},
+                title: const Text("Productos"),
+              ),
+              ListTile(
+                leading: const Icon(Icons.request_page),
+                onTap: () {},
+                title: const Text("Pedidos"),
+              ),
+              ListTile(
+                leading: const Icon(Icons.branding_watermark),
+                onTap: () {},
+                title: const Text("Cupones"),
+              ),
+              ListTile(
+                leading: const Icon(Icons.star_half),
+                onTap: () {},
+                title: const Text("Evaluaciones"),
+              ),
+              ListTile(
+                leading: const Icon(Icons.doorbell),
+                onTap: () {},
+                title: const Text("Notificaciones"),
+              ),
+            ],
+          ),
+        ),
         appBar: AppBar(
           toolbarHeight: 80,
           backgroundColor: Colors.lightGreenAccent,
@@ -45,41 +89,43 @@ class _ProfilePageState extends State<ProfilePage> {
               Icons.menu,
               color: Colors.black,
             ),
-            onPressed: ()=> _key.currentState!.openDrawer(),
+            onPressed: () => _key.currentState!.openDrawer(),
           ),
         ),
-        body: Column(
-          children: [
-            const Center(
-              child: Padding(
-                padding: EdgeInsets.only(top:20,bottom: 20),
-                child: Text(
-                  'Mi Cuenta',
-                  style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w700,
-                    color: Color.fromRGBO(0, 0, 0, 1),
-                  ),
-                )
+        body: Center(
+          child: Column(
+            children: [
+              const Center(
+                  child: Padding(
+                      padding: EdgeInsets.only(top: 20, bottom: 20),
+                      child: Text(
+                        'Mi Cuenta',
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w700,
+                          color: Color.fromRGBO(0, 0, 0, 1),
+                        ),
+                      ))),
+              InkWell(
+                  onTap: () {
+                    navigateSecondPage(const EditImagePage());
+                  },
+                  child: DisplayImage(
+                    imagePath: user.image,
+                    onPressed: () {},
+                  )),
+              buildUserInfoDisplay(
+                  user.name, 'Nombre', const EditNameFormPage()),
+              buildUserInfoDisplay(
+                  user.phone, 'Telefono', const EditPhoneFormPage()),
+              buildUserInfoDisplay(
+                  user.email, 'Correo', const EditEmailFormPage()),
+              Expanded(
+                child: buildAbout(user),
+                flex: 4,
               )
-            ),
-            InkWell(
-              onTap: () {
-                navigateSecondPage(const EditImagePage());
-              },
-              child: DisplayImage(
-                imagePath: user.image,
-                onPressed: () {},
-              )
-            ),
-            buildUserInfoDisplay(user.name, 'Nombre', const EditNameFormPage()),
-            buildUserInfoDisplay(user.phone, 'Telefono', const EditPhoneFormPage()),
-            buildUserInfoDisplay(user.email, 'Correo', const EditEmailFormPage()),
-            Expanded(
-              child: buildAbout(user),
-              flex: 4,
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );
@@ -87,115 +133,99 @@ class _ProfilePageState extends State<ProfilePage> {
 
   Widget buildUserInfoDisplay(String getValue, String title, Widget editPage) =>
       Padding(
-        padding: const EdgeInsets.only(bottom: 10),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(
-                fontSize: 15,
-                fontWeight: FontWeight.w500,
-                color: Colors.grey,
+          padding: const EdgeInsets.only(bottom: 10),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                title,
+                style: const TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.grey,
+                ),
               ),
+              const SizedBox(
+                height: 1,
+              ),
+              Container(
+                  width: 350,
+                  height: 40,
+                  decoration: const BoxDecoration(
+                      color: Colors.lightGreenAccent,
+                      border: Border(
+                          bottom: BorderSide(
+                        color: Colors.grey,
+                        width: 1,
+                      ))),
+                  child: Row(children: [
+                    Expanded(
+                        child: TextButton(
+                            onPressed: () {
+                              navigateSecondPage(editPage);
+                            },
+                            child: Text(
+                              getValue,
+                              style: const TextStyle(fontSize: 16, height: 1.4),
+                            ))),
+                    const Icon(
+                      Icons.keyboard_arrow_right,
+                      color: Colors.grey,
+                      size: 40.0,
+                    )
+                  ]))
+            ],
+          ));
+
+  Widget buildAbout(User user) => Padding(
+      padding: const EdgeInsets.only(bottom: 10),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const Text(
+            'Acerca de mi',
+            style: TextStyle(
+              fontSize: 15,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey,
             ),
-            const SizedBox(
-              height: 1,
-            ),
-            Container(
+          ),
+          const SizedBox(height: 1),
+          Container(
               width: 350,
-              height: 40,
+              height: 75,
               decoration: const BoxDecoration(
-                color: Colors.lightGreenAccent,
-                border: Border(
-                  bottom: BorderSide(
+                  color: Colors.lightGreenAccent,
+                  border: Border(
+                      bottom: BorderSide(
                     color: Colors.grey,
                     width: 1,
-                  )
-                )
-              ),
+                  ))),
               child: Row(children: [
                 Expanded(
-                  child: TextButton(
-                    onPressed: () {
-                      navigateSecondPage(editPage);
-                    },
-                    child: Text(
-                      getValue,
-                      style: const TextStyle(fontSize: 16, height: 1.4),
-                    )
-                  )
-                ),
+                    child: TextButton(
+                        onPressed: () {
+                          navigateSecondPage(const EditDescriptionFormPage());
+                        },
+                        child: Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
+                            child: Align(
+                                alignment: Alignment.topLeft,
+                                child: Text(
+                                  user.aboutMeDescription,
+                                  style: const TextStyle(
+                                    fontSize: 16,
+                                    height: 1.4,
+                                  ),
+                                ))))),
                 const Icon(
                   Icons.keyboard_arrow_right,
                   color: Colors.grey,
                   size: 40.0,
                 )
-              ])
-            )
-          ],
-        )
-      );
-
-  Widget buildAbout(User user) => Padding(
-    padding: const EdgeInsets.only(bottom: 10),
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        const Text(
-          'Acerca de mi',
-          style: TextStyle(
-            fontSize: 15,
-            fontWeight: FontWeight.w500,
-            color: Colors.grey,
-          ),
-        ),
-        const SizedBox(height: 1),
-        Container(
-          width: 350,
-          height: 75,
-          decoration: const BoxDecoration(
-            color: Colors.lightGreenAccent,
-            border: Border(
-              bottom: BorderSide(
-                color: Colors.grey,
-                width: 1,
-              )
-            )
-          ),
-          child: Row(
-            children: [
-              Expanded(
-                child: TextButton(
-                  onPressed: () {
-                    navigateSecondPage(const EditDescriptionFormPage());
-                  },
-                  child: Padding(
-                    padding: const EdgeInsets.fromLTRB(0, 10, 10, 10),
-                    child: Align(
-                      alignment: Alignment.topLeft,
-                      child: Text(
-                        user.aboutMeDescription,
-                        style: const TextStyle(
-                          fontSize: 16,
-                          height: 1.4,
-                        ),
-                      )
-                    )
-                  )
-                )
-              ),
-              const Icon(
-                Icons.keyboard_arrow_right,
-                color: Colors.grey,
-                size: 40.0,
-              )
-            ]
-          )
-        )
-      ],
-    )
-  );
+              ]))
+        ],
+      ));
 
   FutureOr onGoBack(dynamic value) {
     setState(() {});

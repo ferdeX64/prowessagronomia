@@ -29,7 +29,8 @@ class MenuLateral extends StatelessWidget {
                   const SizedBox(
                     height: 10.0,
                   ),
-                ])),
+                ])
+            ),
             ListTile(
               leading: const Icon(Icons.account_balance_outlined,color:Colors.white),
               title: const Text('Inicio',
@@ -40,9 +41,10 @@ class MenuLateral extends StatelessWidget {
               tileColor: Colors.green[600],
               onTap: () {
                 Navigator.push(
-                context,
-                MaterialPageRoute(
-                builder: (BuildContext context) => const Homepage()));
+                  context,
+                  MaterialPageRoute(
+                  builder: (BuildContext context) => const Homepage())
+                );
               },
             ),
             ListTile(
@@ -54,12 +56,13 @@ class MenuLateral extends StatelessWidget {
               ),
               tileColor: Colors.green[600],
               onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                              builder: (BuildContext context) => const NosotrosPage())
-                            );
-                          }),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (BuildContext context) => const NosotrosPage())
+                );
+              }
+            ),
             ListTile(
               leading: const Icon(Icons.badge_outlined,color:Colors.white),
               title: const Text('Equipo',

@@ -41,71 +41,74 @@ class _EditImagePageState extends State<EditImagePage> {
             onPressed: () => Navigator.of(context).pop(),
           )
         ),
-        body: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.only(top: 25),
-              child: Center(
-                  child: Text(
-                    "Actualiza tu Foto...",
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(25),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: <Widget>[
+              const Padding(
+                padding: EdgeInsets.only(top: 25),
+                child: Center(
+                    child: Text(
+                      "Actualiza tu Foto...",
+                      style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                ),
               ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 25),
-              child: Center(
-                  child: Text(
-                    "Por favor Seleccione la imagen que desea mostrar en su perfil",
-                    style: TextStyle(
-                      fontSize: 15,
-                    ),
-                  )
+              const Padding(
+                padding: EdgeInsets.only(top: 25),
+                child: Center(
+                    child: Text(
+                      "Por favor Seleccione la imagen que desea mostrar en su perfil",
+                      style: TextStyle(
+                        fontSize: 15,
+                      ),
+                    )
+                ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 20),
-              child: SizedBox(
-                width: 330,
-                child: GestureDetector(
-                  onTap: () async {
-                    final image = await ImagePicker().pickImage(source: ImageSource.gallery);
-                    if (image == null) return;
-                    final location = await getApplicationDocumentsDirectory();
-                    final name = basename(image.path);
-                    final imageFile = File('${location.path}/$name');
-                    final newImage = await File(image.path).copy(imageFile.path);
-                    setState(
-                      () => user = user.copy(imagePath: newImage.path)
-                    );
-                  },
-                  child: Image.network(user.image),
-                )
-              )
-            ),
-            Padding(
-              padding: const EdgeInsets.only(top: 40),
-              child: Align(
-                alignment: Alignment.bottomCenter,
+              Padding(
+                padding: const EdgeInsets.only(top: 20),
                 child: SizedBox(
-                  width: 150,
-                  height: 50,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: const Text(
-                      'Actualizar',
-                      style: TextStyle(fontSize: 20),
+                  width: 330,
+                  child: GestureDetector(
+                    onTap: () async {
+                      final image = await ImagePicker().pickImage(source: ImageSource.gallery);
+                      if (image == null) return;
+                      final location = await getApplicationDocumentsDirectory();
+                      final name = basename(image.path);
+                      final imageFile = File('${location.path}/$name');
+                      final newImage = await File(image.path).copy(imageFile.path);
+                      setState(
+                        () => user = user.copy(imagePath: newImage.path)
+                      );
+                    },
+                    child: Image.network(user.image),
+                  )
+                )
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 40),
+                child: Align(
+                  alignment: Alignment.bottomCenter,
+                  child: SizedBox(
+                    width: 150,
+                    height: 50,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Actualizar',
+                        style: TextStyle(fontSize: 20),
+                      ),
                     ),
-                  ),
+                  )
                 )
               )
-            )
-          ],
+            ],
+          ),
         ),
       ),
     );

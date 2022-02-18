@@ -52,69 +52,72 @@ class EditEmailFormPageState extends State<EditEmailFormPage> {
             onPressed: () => Navigator.of(context).pop(),
           )
         ),
-        body: Form(
-          key: _formKey,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(top: 50),
-                child: Center(
-                  child: Text(
-                    "Ingrese su Correo",
-                    style:TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold
-                    ),
-                    textAlign: TextAlign.left,
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(25),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.only(top: 50),
+                  child: Center(
+                    child: Text(
+                      "Ingrese su Correo",
+                      style:TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold
+                      ),
+                      textAlign: TextAlign.left,
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 40),
+                  child: SizedBox(
+                    height: 100,
+                    width: 320,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Por favor ingrese su correo';
+                        }
+                        return null;
+                      },
+                      decoration: const InputDecoration(
+                        labelText: 'Su Correo Electronico'
+                      ),
+                      controller: emailController,
+                    )
                   )
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 40),
-                child: SizedBox(
-                  height: 100,
-                  width: 320,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Por favor ingrese su correo';
-                      }
-                      return null;
-                    },
-                    decoration: const InputDecoration(
-                      labelText: 'Su Correo Electronico'
-                    ),
-                    controller: emailController,
-                  )
-                )
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 50),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
-                  child: SizedBox(
-                    width: 320,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate() && EmailValidator.validate(
-                          emailController.text
-                        )) {
-                          updateUserValue(emailController.text);
-                          Navigator.pop(context);
-                        }
-                      },
-                      child: const Text(
-                        'Actualizar',
-                        style: TextStyle(fontSize: 15),
+                Padding(
+                  padding: const EdgeInsets.only(top: 50),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate() && EmailValidator.validate(
+                            emailController.text
+                          )) {
+                            updateUserValue(emailController.text);
+                            Navigator.pop(context);
+                          }
+                        },
+                        child: const Text(
+                          'Actualizar',
+                          style: TextStyle(fontSize: 20),
+                        ),
                       ),
-                    ),
+                    )
                   )
                 )
-              )
-            ]
+              ]
+            ),
           ),
         )
       ),

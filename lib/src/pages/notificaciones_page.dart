@@ -10,7 +10,7 @@ class NotificacionesPage extends StatefulWidget {
 class _NotificacionesPageState extends State<NotificacionesPage> {
   @override
   Widget build(BuildContext context) {
- return SafeArea(
+    return SafeArea(
       child: Scaffold(
         appBar: AppBar(
           toolbarHeight: 80,
@@ -34,47 +34,8 @@ class _NotificacionesPageState extends State<NotificacionesPage> {
             onPressed: () => Navigator.of(context).pop(),
           )
         ),
-        body: Form(
-          child: Column(
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(top: 25),
-                child: Center(
-                  child: Text(
-                    "Ingrese sus Datos",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  )
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 25),
-                child: SizedBox(
-                  height: 100,
-                  width: 250,
-                  child: TextFormField(
-                    decoration:
-                        const InputDecoration(labelText: 'Nombre'),
-                  )
-                )
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: SizedBox(
-                  height: 100,
-                  width: 250,
-                  child: TextFormField(
-                    decoration:const InputDecoration(labelText: 'Apellido'),
-                  )
-                )
-              ),
-              
-            ],
-          ),
-        )
+        
       ),
     );
   }
-  }
+}

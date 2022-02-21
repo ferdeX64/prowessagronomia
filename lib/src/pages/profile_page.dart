@@ -5,6 +5,7 @@ import 'package:prowessagronomia/src/pages/edit_email.dart';
 import 'package:prowessagronomia/src/pages/edit_image.dart';
 import 'package:prowessagronomia/src/pages/edit_name.dart';
 import 'package:prowessagronomia/src/pages/edit_phone.dart';
+import 'package:prowessagronomia/src/pages/evaluacion_page.dart';
 import 'package:prowessagronomia/src/pages/notificaciones_page.dart';
 import 'package:prowessagronomia/src/user/user.dart';
 import 'package:prowessagronomia/src/user/user_data.dart';
@@ -44,33 +45,66 @@ class _ProfilePageState extends State<ProfilePage> {
                     ),
                   ])),
               ListTile(
-                leading: const Icon(Icons.redeem),
+                leading: const Icon(
+                  Icons.redeem,
+                  size:30
+                ),
                 onTap: () {},
-                title: const Text("Productos"),
+                title: const Text("Productos",
+                  style: TextStyle(fontSize: 20)
+                ),
               ),
               ListTile(
-                leading: const Icon(Icons.request_page),
+                leading: const Icon(
+                  Icons.request_page,
+                  size:30
+                ),
                 onTap: () {},
-                title: const Text("Pedidos"),
+                title: const Text("Pedidos",
+                  style: TextStyle(fontSize: 20)
+                ),
               ),
               ListTile(
-                leading: const Icon(Icons.branding_watermark),
+                leading: const Icon(
+                  Icons.branding_watermark,
+                  size:30
+                ),
                 onTap: () {},
-                title: const Text("Cupones"),
+                title: const Text("Cupones",
+                  style: TextStyle(fontSize: 20)
+                ),
               ),
               ListTile(
-                leading: const Icon(Icons.star_half),
-                onTap: () {},
-                title: const Text("Evaluaciones"),
+                leading: const Icon(
+                  Icons.star_half,
+                  size:30
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (BuildContext context) => const EvaluacionPage())
+                  );
+                },
+                title: const Text("Evaluaciones",
+                  style: TextStyle(fontSize: 20)
+                ),
               ),
               ListTile(
-                leading: const Icon(Icons.doorbell),
-                onTap: () {Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                  builder: (BuildContext context) => const NotificacionesPage())
-                );},
-                title: const Text("Notificaciones"),
+                leading: const Icon(
+                  Icons.doorbell,
+                  size:30
+                ),
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                    builder: (BuildContext context) => const NotificacionesPage())
+                  );
+                },
+                title: const Text("Notificaciones",
+                  style: TextStyle(fontSize: 20)
+                ),
               ),
             ],
           ),

@@ -72,12 +72,12 @@ class MenuLateral extends StatelessWidget {
               ),
               tileColor: Colors.green[600],
               onTap: () {
-                            Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                              builder: (BuildContext context) => const EquipoPage())
-                            );
-                          }
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                  builder: (BuildContext context) => const EquipoPage())
+                );
+              }
             ),
             Accordion(
               paddingListBottom: 0.0,

@@ -37,7 +37,6 @@ class _HomepageState extends State<Homepage> {
   }
   @override
   Widget build(BuildContext context) {
-    String texto="";
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

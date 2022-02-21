@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:prowessagronomia/src/pages/confirmacion_compra.dart';
 import 'package:prowessagronomia/src/pages/splash_screen.dart';
 
 void main() {
@@ -38,7 +39,7 @@ class MyApp extends StatelessWidget {
           ),
         )
       ),
-      home: const SplashScreen(),
+      home: const OnboardingScreenThree(),
     );
   }
 }

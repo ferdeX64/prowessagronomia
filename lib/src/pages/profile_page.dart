@@ -7,10 +7,13 @@ import 'package:prowessagronomia/src/pages/edit_name.dart';
 import 'package:prowessagronomia/src/pages/edit_phone.dart';
 import 'package:prowessagronomia/src/pages/evaluacion_page.dart';
 import 'package:prowessagronomia/src/pages/notificaciones_page.dart';
+import 'package:prowessagronomia/src/pages/pedidos_page.dart';
 import 'package:prowessagronomia/src/user/user.dart';
 import 'package:prowessagronomia/src/user/user_data.dart';
 import 'package:prowessagronomia/src/widgets/display_image_widget.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
+
+import 'add_product_page.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -29,9 +32,11 @@ class _ProfilePageState extends State<ProfilePage> {
         key: _key,
         drawer: const MenuLateral(),
         endDrawer: Drawer(
-          child: ListView(
-            children: [
-              DrawerHeader(
+          child: Ink(
+            color: Colors.black87, 
+            child: ListView(
+              children: [
+                DrawerHeader(
                   decoration: const BoxDecoration(
                     color: Colors.lightGreenAccent,
                   ),
@@ -43,70 +48,125 @@ class _ProfilePageState extends State<ProfilePage> {
                     const SizedBox(
                       height: 10.0,
                     ),
-                  ])),
-              ListTile(
-                leading: const Icon(
-                  Icons.redeem,
-                  size:30
+                  ])
                 ),
-                onTap: () {},
-                title: const Text("Productos",
-                  style: TextStyle(fontSize: 20)
+                ListTile(
+                  leading: const Icon(
+                    Icons.redeem,
+                    size:30,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (BuildContext context) => const AddProduct())
+                    );
+                  },
+                  title: const Text("Productos",
+                    style: TextStyle(fontSize: 20,color: Colors.white,)
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.request_page,
-                  size:30
+                const Divider(
+                  height: 2,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                  color: Colors.white,
                 ),
-                onTap: () {},
-                title: const Text("Pedidos",
-                  style: TextStyle(fontSize: 20)
+                ListTile(
+                  leading: const Icon(
+                    Icons.request_page,
+                    size:30,
+                    color: Colors.white
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (BuildContext context) => const PedidosPage()
+                      )
+                    );
+                  },
+                  title: const Text("Pedidos",
+                    style: TextStyle(fontSize: 20,color: Colors.white,)
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.branding_watermark,
-                  size:30
+                const Divider(
+                  height: 2,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                  color: Colors.white,
                 ),
-                onTap: () {},
-                title: const Text("Cupones",
-                  style: TextStyle(fontSize: 20)
+                ListTile(
+                  leading: const Icon(
+                    Icons.branding_watermark,
+                    size:30,
+                    color: Colors.white,
+                  ),
+                  onTap: () {},
+                  title: const Text("Cupones",
+                    style: TextStyle(fontSize: 20,color: Colors.white,)
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.star_half,
-                  size:30
+                const Divider(
+                  height: 2,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                  color: Colors.white,
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (BuildContext context) => const EvaluacionPage())
-                  );
-                },
-                title: const Text("Evaluaciones",
-                  style: TextStyle(fontSize: 20)
+                ListTile(
+                  leading: const Icon(
+                    Icons.star_half,
+                    size:30,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (BuildContext context) => const EvaluacionPage())
+                    );
+                  },
+                  title: const Text("Evaluaciones",
+                    style: TextStyle(fontSize: 20,color: Colors.white,)
+                  ),
                 ),
-              ),
-              ListTile(
-                leading: const Icon(
-                  Icons.doorbell,
-                  size:30
+                const Divider(
+                  height: 2,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                  color: Colors.white,
                 ),
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                    builder: (BuildContext context) => const NotificacionesPage())
-                  );
-                },
-                title: const Text("Notificaciones",
-                  style: TextStyle(fontSize: 20)
+                ListTile(
+                  leading: const Icon(
+                    Icons.doorbell,
+                    size:30,
+                    color: Colors.white,
+                  ),
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (BuildContext context) => const NotificacionesPage())
+                    );
+                  },
+                  title: const Text("Notificaciones",
+                    style: TextStyle(fontSize: 20,color: Colors.white,)
+                  ),
                 ),
-              ),
-            ],
+                const Divider(
+                  height: 2,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                  color: Colors.white,
+                ),
+              ],
+            ),
           ),
         ),
         appBar: AppBar(

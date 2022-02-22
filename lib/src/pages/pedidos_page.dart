@@ -6,15 +6,10 @@ class PedidosPage extends StatefulWidget {
   @override
   State<PedidosPage> createState() => _PedidosPageState();
 }
-GlobalKey<FormState> myFormKey = new GlobalKey();
+GlobalKey<FormState> myFormKey = GlobalKey();
 class _PedidosPageState extends State<PedidosPage> {
   String dropdownValue = 'Clientes registrado';
   DateTimeRange? myDateRange;
-
-  void _submitForm() {
-    final FormState? form = myFormKey.currentState;
-    form!.save();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -56,12 +51,10 @@ class _PedidosPageState extends State<PedidosPage> {
                       style: TextButton.styleFrom(
                         primary: Colors.lightGreen,
                       ),
-                      child: Container(
-                        child: Row(
-                          children: const[
-                            Text("Todo (0)",style: TextStyle(fontSize: 14)),
-                          ],
-                        )
+                      child: Row(
+                        children: const[
+                          Text("Todo (0)",style: TextStyle(fontSize: 14)),
+                        ],
                       ),
                       onPressed: (){                    
                       },
@@ -70,12 +63,10 @@ class _PedidosPageState extends State<PedidosPage> {
                       style: TextButton.styleFrom(
                         primary: Colors.lightGreen,
                       ),
-                      child: Container(
-                        child: Row(
-                          children: const[
-                            Text("Completado (0)",style: TextStyle(fontSize: 14)),
-                          ],
-                        )
+                      child: Row(
+                        children: const[
+                          Text("Completado (0)",style: TextStyle(fontSize: 14)),
+                        ],
                       ),
                       onPressed: (){                    
                       },
@@ -84,12 +75,10 @@ class _PedidosPageState extends State<PedidosPage> {
                       style: TextButton.styleFrom(
                         primary: Colors.lightGreen,
                       ),
-                      child: Container(
-                        child: Row(
-                          children: const[
-                            Text("En proceso (0)",style: TextStyle(fontSize: 14)),
-                          ],
-                        )
+                      child: Row(
+                        children: const[
+                          Text("En proceso (0)",style: TextStyle(fontSize: 14)),
+                        ],
                       ),
                       onPressed: (){                    
                       },
@@ -98,12 +87,10 @@ class _PedidosPageState extends State<PedidosPage> {
                       style: TextButton.styleFrom(
                         primary: Colors.lightGreen,
                       ),
-                      child: Container(
-                        child: Row(
-                          children: const[
-                            Text("En espera (0)",style: TextStyle(fontSize: 14)),
-                          ],
-                        )
+                      child: Row(
+                        children: const[
+                          Text("En espera (0)",style: TextStyle(fontSize: 14)),
+                        ],
                       ),
                       onPressed: (){                    
                       },

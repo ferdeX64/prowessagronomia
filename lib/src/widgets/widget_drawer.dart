@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:prowessagronomia/src/pages/add_product_page.dart';
 import 'package:prowessagronomia/src/pages/categorias_productos.dart';
 import 'package:prowessagronomia/src/pages/equipo_page.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
 import 'package:prowessagronomia/src/pages/login_page.dart';
 import 'package:prowessagronomia/src/pages/nosotros_page.dart';
-import 'package:prowessagronomia/src/pages/pedidos_page.dart';
 import 'package:prowessagronomia/src/pages/tiendas_page.dart';
 import 'package:accordion/accordion.dart';
 

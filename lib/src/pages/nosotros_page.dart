@@ -94,8 +94,7 @@ class NosotrosPage extends StatelessWidget {
                 children:  [
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 30),
-                    height: 220,
-
+                    height: 200,
                     child:  SizedBox(
                       child: Image.asset('assets/images/mision.png',
                           fit: BoxFit.cover)
@@ -124,7 +123,7 @@ class NosotrosPage extends StatelessWidget {
                 children:  [
                   Container(
                     padding: const EdgeInsets.symmetric(vertical: 30),
-                    height: 220,
+                    height: 200,
 
                     child:  SizedBox(
                       child: Image.asset('assets/images/vision.png',

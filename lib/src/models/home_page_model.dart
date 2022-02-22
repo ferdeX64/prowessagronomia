@@ -13,4 +13,3 @@ class ProductsSharePrices {
 
   ProductsSharePrices(this.price);
 }
-

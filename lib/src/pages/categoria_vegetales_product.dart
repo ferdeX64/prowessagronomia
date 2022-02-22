@@ -109,12 +109,12 @@ class _CategoriaVerdurasState extends State<CategoriaVerduras>{
                       Text( mList2[index].name,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 25,
+                          fontSize: 23,
                           color: Colors.black, height:2),),
                       Text(mList3[index].price,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 25,
+                          fontSize: 23,
                           color: Colors.black, height:2),),
                      AsyncButtonBuilder(
                       child: const Padding(

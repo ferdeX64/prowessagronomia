@@ -26,6 +26,8 @@ class _HomepageState extends State<Homepage> {
     'https://prowessagrec.com/wp-content/uploads/2021/10/Diseno-1-Portada.jpg',
   ];
 
+  
+
   @override
   void initState() {
     super.initState();
@@ -141,12 +143,12 @@ class _HomepageState extends State<Homepage> {
                       Text( mList2[index].name,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 25,
+                          fontSize: 23,
                           color: Colors.black, height:2),),
                       Text(mList3[index].price,
                         style: const TextStyle(
                           fontWeight: FontWeight.w400,
-                          fontSize: 25,
+                          fontSize: 23,
                           color: Colors.black, height:2),),
                      AsyncButtonBuilder(
                       child: const Padding(
@@ -206,7 +208,23 @@ class _HomepageState extends State<Homepage> {
                           ),
                         );
                       },
-                    ),],
+                    ),
+                     InkWell(
+                       child: const Text( "Ver carrito",
+                          style: TextStyle(
+                            fontWeight: FontWeight.w400,
+                            fontSize: 20,
+                            color:Colors.lightGreen ,height:2),),
+                        onTap: () {
+                          Navigator.push(
+                          context,
+                         MaterialPageRoute(
+                          builder: (BuildContext context) =>  const CarritoPage()
+                          )
+                         );
+                      },    
+                     ),
+                    ],
                   ),
                 ),
               )

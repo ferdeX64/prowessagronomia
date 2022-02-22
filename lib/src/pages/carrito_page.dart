@@ -26,7 +26,6 @@ class _CarritoPageState extends State<CarritoPage> {
   }
   @override
   Widget build(BuildContext context) {
-    double totalPrice = 0;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(

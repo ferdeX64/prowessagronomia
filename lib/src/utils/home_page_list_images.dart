@@ -11,3 +11,7 @@ const facebook="assets/images/facebook.png";
 const instagram="assets/images/instagram.png";
 const tiktok="assets/images/tik_tok.png";
 const twitter="assets/images/twitter.png";
+const linkface="https://www.facebook.com/Prowess-Agronom%C3%ADa-292299772568132";
+const linkinst="https://www.instagram.com/prowessagro_ec/";
+const linktik="https://www.tiktok.com/@totalprowess_ec?_d=secCgwIARCbDRjEFSACKAESPgo8u2Uw9lwSMep6qlnbEYLmkgKK%2BmSKKqAUrNzvR3mTrYMrbkjwzRstGLdgPBkkcutXYEF39DdD4Ib4jXk2GgA%3D&language=es&preview_pb=0&sec_user_id=MS4wLjABAAAA5ssXTMHAjCuiyg70Qnk2I0exUw1-H-07TstgRrHAReGYT--ib-8_KD8FaGnAdkLl&share_app_id=1233&share_item_id=7029374369017122054&share_link_id=9cb786c8-e893-453f-af55-3d8f804cd931&source=h5_m&timestamp=1636654058&u_code=d290dcmm987fbe&user_id=6604901674798972933&utm_campaign=client_share&utm_medium=android&utm_source=copy&_r=1";
+const linktwi="https://twitter.com/EcProwessagro";

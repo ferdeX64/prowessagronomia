@@ -225,3 +225,21 @@ List<ProductsShareProduct> iconsImagesList() {
 
   return list;
 }
+
+List<ProductsShareProduct> iconsNameList() {
+  List<ProductsShareProduct> list = [];
+
+  var list1 = ProductsShareProduct(linkface);
+  list.add(list1);
+
+  var list2 = ProductsShareProduct(linktwi);
+  list.add(list2);
+
+  var list3 = ProductsShareProduct(linktik);
+  list.add(list3);
+
+  var list4 = ProductsShareProduct(linkinst);
+  list.add(list4);
+
+  return list;
+}

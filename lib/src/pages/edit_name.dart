@@ -53,89 +53,101 @@ class EditNameFormPageState extends State<EditNameFormPage> {
             onPressed: () => Navigator.of(context).pop(),
           )
         ),
-        body: Form(
-          key: _formKey,
-          child: Column(
-            children: <Widget>[
-              const Padding(
-                padding: EdgeInsets.only(top: 25),
-                child: Center(
-                  child: Text(
-                    "Ingrese sus Datos",
-                    style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.bold,
-                    ),
+        body: SingleChildScrollView(
+          padding: const EdgeInsets.all(25),
+          child: Form(
+            key: _formKey,
+            child: Column(
+              children: <Widget>[
+                const Padding(
+                  padding: EdgeInsets.only(top: 25),
+                  child: Center(
+                    child: Text(
+                      "Ingrese sus Datos",
+                      style: TextStyle(
+                        fontSize: 25,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: SizedBox(
+                    height: 100,
+                    width: 250,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Porfavor ingrese su Nombre';
+                        } else if (!isAlpha(value)) {
+                          return 'Solo puede ingresar letras...';
+                        }
+                        return null;
+                      },
+                      decoration: const InputDecoration(
+                        labelText: 'Nombre'
+                      ),
+                      controller: firstNameController,
+                    )
                   )
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 25),
-                child: SizedBox(
-                  height: 100,
-                  width: 250,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Porfavor ingrese su Nombre';
-                      } else if (!isAlpha(value)) {
-                        return 'Solo puede ingresar letras...';
-                      }
-                      return null;
-                    },
-                    decoration:
-                        const InputDecoration(labelText: 'Nombre'),
-                    controller: firstNameController,
-                  )
-                )
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 10),
-                child: SizedBox(
-                  height: 100,
-                  width: 250,
-                  child: TextFormField(
-                    validator: (value) {
-                      if (value == null || value.isEmpty) {
-                        return 'Porfavor ingrese su Apellido';
-                      } else if (!isAlpha(value)) {
-                        return 'Solo puede ingresar letras...';
-                      }
-                      return null;
-                    },
-                    decoration:const InputDecoration(labelText: 'Apellido'),
-                    controller: secondNameController,
-                  )
-                )
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 25),
-                child: Align(
-                  alignment: Alignment.bottomCenter,
+                Padding(
+                  padding: const EdgeInsets.only(top: 10),
                   child: SizedBox(
-                    width: 150,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        if (_formKey.currentState!.validate() &&
-                            isAlpha(firstNameController.text +
-                                secondNameController.text)) {
-                          updateUserValue(firstNameController.text +
-                              " " +
-                              secondNameController.text
-                          );
-                          Navigator.pop(context);
+                    height: 100,
+                    width: 250,
+                    child: TextFormField(
+                      validator: (value) {
+                        if (value == null || value.isEmpty) {
+                          return 'Porfavor ingrese su Apellido';
+                        } else if (!isAlpha(value)) {
+                          return 'Solo puede ingresar letras...';
                         }
+                        return null;
                       },
-                      child: const Text(
-                        'Actualizar',
-                        style: TextStyle(fontSize: 15),
+                      decoration:const InputDecoration(
+                        labelText: 'Apellido'
                       ),
-                    ),
+                      controller: secondNameController,
+                    )
+                  )
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(top: 25),
+                  child: Align(
+                    alignment: Alignment.bottomCenter,
+                    child: SizedBox(
+                      width: 150,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          if (
+                            _formKey.currentState!.validate() && 
+                            isAlpha(
+                              firstNameController.text 
+                              + 
+                              secondNameController.text
+                            )
+                          ){
+                            updateUserValue(
+                              firstNameController.text +
+                                " " +
+                              secondNameController.text
+                            );
+                            Navigator.pop(context);
+                          }
+                        },
+                        child: const Text(
+                          'Actualizar',
+                          style: TextStyle(fontSize: 15),
+                        ),
+                      ),
+                    )
                   )
                 )
-              )
-            ],
+              ],
+            ),
           ),
         )
       ),

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/add_product_page.dart';
 import 'package:prowessagronomia/src/pages/categorias_productos.dart';
 import 'package:prowessagronomia/src/pages/equipo_page.dart';
 import 'package:prowessagronomia/src/pages/homepage.dart';
 import 'package:prowessagronomia/src/pages/login_page.dart';
 import 'package:prowessagronomia/src/pages/nosotros_page.dart';
+import 'package:prowessagronomia/src/pages/pedidos_page.dart';
 import 'package:prowessagronomia/src/pages/tiendas_page.dart';
 import 'package:accordion/accordion.dart';
 
@@ -126,7 +128,8 @@ class MenuLateral extends StatelessWidget {
                             Navigator.push(
                               context,
                               MaterialPageRoute(
-                              builder: (BuildContext context) => const StorePage()));
+                              builder: (BuildContext context) => const StorePage())
+                            );
                           },
                           child: const ListTile(
                             leading: Icon(Icons.add_business_rounded,color: Colors.white),

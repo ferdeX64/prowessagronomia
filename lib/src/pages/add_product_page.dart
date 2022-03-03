@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+
+import 'add_new_product_page.dart';
 class AddProduct extends StatelessWidget {
   const AddProduct({Key? key}) : super(key: key);
 
@@ -68,7 +70,12 @@ class AddProduct extends StatelessWidget {
                       ],
                     )
                   ),
-                  onPressed: (){                    
+                  onPressed: (){   
+                    Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                              builder: (BuildContext context) => const AddNewProduct())
+                            );                 
                   },
                 )   
               ],

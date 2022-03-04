@@ -6,6 +6,7 @@ import 'package:prowessagronomia/src/utils/productos_home_page.dart';
 import 'package:prowessagronomia/src/widgets/widget_drawer.dart';
 
 import 'carrito_page.dart';
+import 'detalles_producto.dart';
 
 class Homepage extends StatefulWidget {
   const Homepage({Key? key}) : super(key: key);
@@ -128,7 +129,8 @@ class _HomepageState extends State<Homepage> {
                 itemCount: mList1.length,
                 shrinkWrap: true,
                 physics: const NeverScrollableScrollPhysics(),
-                itemBuilder: (BuildContext context, int index) => Container(
+                itemBuilder: (BuildContext context, int index) => InkWell(
+                  child: Container(
                   margin: const EdgeInsets.only(bottom: 30, left:20,right: 20,top:20),
                   padding: const EdgeInsets.all(30),
                   decoration: BoxDecoration(
@@ -226,6 +228,13 @@ class _HomepageState extends State<Homepage> {
                      ),
                     ],
                   ),
+                  ),
+                  onTap: (){
+                    Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                     builder: (BuildContext context) => const DetalleProducto()));
+                 },
                 ),
               )
             ],

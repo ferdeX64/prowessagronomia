@@ -47,6 +47,11 @@ class MenuLateral extends StatelessWidget {
                 );
               },
             ),
+            const Divider(
+              height: 2,
+              thickness: 2,
+              color: Colors.black,
+            ),
             ListTile(
               leading: const Icon(Icons.apartment_outlined,color: Colors.white),
               title: const Text('Nosotros',
@@ -63,6 +68,11 @@ class MenuLateral extends StatelessWidget {
                 );
               }
             ),
+            const Divider(
+              height: 2,
+              thickness: 2,
+              color: Colors.black,
+            ),
             ListTile(
               leading: const Icon(Icons.badge_outlined,color:Colors.white),
               title: const Text('Equipo',
@@ -78,6 +88,11 @@ class MenuLateral extends StatelessWidget {
                   builder: (BuildContext context) => const EquipoPage())
                 );
               }
+            ),
+            const Divider(
+              height: 1,
+              thickness: 2,
+              color: Colors.black,
             ),
             Accordion(
               paddingListBottom: 0.0,
@@ -145,7 +160,13 @@ class MenuLateral extends StatelessWidget {
                     ]
                   ),
                 ),
-              ],),
+              ],
+            ),
+            const Divider(
+              height: 1,
+              thickness: 2,
+              color: Colors.black,
+            ),
             ListTile(
                 leading: const Icon(Icons.account_box_rounded,color:Colors.white),
                 title: const Text('Iniciar Sesion',
@@ -162,6 +183,11 @@ class MenuLateral extends StatelessWidget {
                     )
                   );
                 }
+            ),
+            const Divider(
+              height: 2,
+              thickness: 2,
+              color: Colors.black,
             ),
           ]
         ),

@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:prowessagronomia/src/pages/cupon_page.dart';
 import 'package:prowessagronomia/src/pages/edit_description.dart';
 import 'package:prowessagronomia/src/pages/edit_email.dart';
 import 'package:prowessagronomia/src/pages/edit_image.dart';
@@ -32,6 +33,7 @@ class _ProfilePageState extends State<ProfilePage> {
         key: _key,
         drawer: const MenuLateral(),
         endDrawer: Drawer(
+
           child: Ink(
             color: Colors.black87, 
             child: ListView(
@@ -105,7 +107,13 @@ class _ProfilePageState extends State<ProfilePage> {
                     size:30,
                     color: Colors.white,
                   ),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                      builder: (BuildContext context) => const CuponPage())
+                    );
+                  },
                   title: const Text("Cupones",
                     style: TextStyle(fontSize: 20,color: Colors.white,)
                   ),

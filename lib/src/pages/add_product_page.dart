@@ -35,7 +35,7 @@ class AddProduct extends StatelessWidget {
               children: [
                 const Padding(
                   padding:  EdgeInsets.symmetric(vertical:12.0),
-                  child:  Text("Tableros",  style: TextStyle( fontSize: 40, fontWeight:FontWeight.bold)),
+                  child:  Text("Tablero",  style: TextStyle( fontSize: 40, fontWeight:FontWeight.bold)),
                 ),
                 Center(
                   child: Image.asset('assets/images/etiqueta.png',height: 168, width: 170, fit: BoxFit.fill),

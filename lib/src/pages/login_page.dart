@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:nb_utils/nb_utils.dart';
 import 'package:prowessagronomia/src/pages/password_page.dart';
-import 'package:prowessagronomia/src/pages/profile_page.dart';
 import 'package:prowessagronomia/src/pages/sign_up.dart';
+
+import 'escritorio_page.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -190,7 +191,7 @@ class _LoginPageState extends State<LoginPage> {
                                       Navigator.push(
                                           context,
                                           MaterialPageRoute(
-                                            builder: (BuildContext context) => const ProfilePage()
+                                            builder: (BuildContext context) =>  const EscritorioPage()
                                           )
                                       );
                                     },

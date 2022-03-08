@@ -93,41 +93,92 @@ class _EscritorioPageState extends State<EscritorioPage> {
                         ],
                       ),
                     ),
-                    Container(
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.black12),
-                        borderRadius: BorderRadius.circular(10),
+                    Padding(
+                      padding: const EdgeInsets.only(top:8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 16,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: const [
+                            Text("Ventas",style: TextStyle( fontSize: 25)),
+                            Text("\$0,0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                             Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
+                            ),
+                            Text("Ganancias",style: TextStyle( fontSize: 25)),
+                            Text("\$0,0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
+                            ),
+                            Text("Vistas de página",style: TextStyle( fontSize: 25)),
+                            Text("0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
+                            ),
+                            Text("Pedido",style: TextStyle( fontSize: 25)),
+                            Text("0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                    
+                          ],
+                        ),
                       ),
-                      child: Column(
-                        children: [
-                          Padding(
-                            padding: const EdgeInsets.all(15.0),
-                            child: LinearPercentIndicator(
-                              width: MediaQuery.of(context).size.width - 50,
-                              animation: true,
-                              lineHeight: 20.0,
-                              animationDuration: 2000,
-                              percent: 0.9,
-                              center: const Text("Ventas"),                                 
-                              progressColor: Colors.blue[100],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(top:8.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width - 16,
+                        decoration: BoxDecoration(
+                          border: Border.all(color: Colors.black12),
+                          borderRadius: BorderRadius.circular(10),
+                        ),
+                        child: Column(
+                          children: const [
+                            Text("Ventas",style: TextStyle( fontSize: 25)),
+                            Text("\$0,0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                             Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
                             ),
-                          ),
-                          Padding(
-                            padding: const EdgeInsets.only(bottom: 12.0),
-                            child: Container(
-                              width: MediaQuery.of(context).size.width - 80,
-                              decoration: BoxDecoration(
-                                border: Border.all(color: Colors.blue),
-                                borderRadius: BorderRadius.circular(10),
-                                 color:  Colors.blue[100] ,
-                              ),
-                              child: const Padding(
-                                padding: EdgeInsets.all(8.0),
-                                child: Text("Añadir Banner para ganar un 15% de progreso"),
-                              ),
+                            Text("Ganancias",style: TextStyle( fontSize: 25)),
+                            Text("\$0,0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
                             ),
-                          )
-                        ],
+                            Text("Vistas de página",style: TextStyle( fontSize: 25)),
+                            Text("0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                            Divider(
+                              height: 1,
+                              thickness: 1,
+                              indent: 20,
+                              endIndent: 20,
+                              color:Colors.black12,
+                            ),
+                            Text("Pedido",style: TextStyle( fontSize: 25)),
+                            Text("0",style: TextStyle( fontSize: 25, fontWeight:FontWeight.bold)),
+                    
+                          ],
+                        ),
                       ),
                     ),
                   ],

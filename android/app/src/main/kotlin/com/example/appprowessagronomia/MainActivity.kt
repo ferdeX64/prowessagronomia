@@ -1,4 +1,4 @@
-package com.example.prowessagronomia
+package com.example.appprowessagronomia
 
 import io.flutter.embedding.android.FlutterActivity
 

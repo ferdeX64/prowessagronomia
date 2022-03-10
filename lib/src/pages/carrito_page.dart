@@ -1,8 +1,11 @@
+// ignore_for_file: prefer_const_constructors
+
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:prowessagronomia/src/models/home_page_model.dart';
 import 'package:prowessagronomia/src/pages/form_compra_page.dart';
 import 'package:prowessagronomia/src/utils/productos_home_page.dart';
+import 'package:prowessagronomia/src/widgets/botton_select_number.dart';
 
 
 class CarritoPage extends StatefulWidget {
@@ -26,7 +29,7 @@ class _CarritoPageState extends State<CarritoPage> {
   }
   @override
   Widget build(BuildContext context) {
-    double totalPrice = 0;
+    //double totalPrice = 0;
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
@@ -133,7 +136,7 @@ class _CarritoPageState extends State<CarritoPage> {
                         ],
                       ),
                       const SizedBox(height: 20.0,),
-                      _BottomSelectNumber(),
+                      BottomSelectNumber(),
                       const SizedBox(height: 20.0,),
                         ],
                       ),
@@ -151,7 +154,7 @@ class _CarritoPageState extends State<CarritoPage> {
             itemCount: 3
         ),
         bottomSheet: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Container(
               height: 75.0,
@@ -199,74 +202,8 @@ class _CarritoPageState extends State<CarritoPage> {
   }
 }
 
-class _BottomSelectNumber extends StatefulWidget {
-  @override
-  __BottomSelectNumberState createState() => __BottomSelectNumberState();
-}
+//Botones para agregar o quitar productos (-/+)
 
-class __BottomSelectNumberState extends State<_BottomSelectNumber> {
-  int count = 0;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 140,
-      height: 60,
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(10),
-        boxShadow: const [
-          BoxShadow(
-            color: Colors.black26,
-            blurRadius: 8,
-          ),
-        ],
-      ),
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-          // menos :
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                if (count == 0) {
-                  count = 0;
-                } else {
-                  count--;
-                }
-              });
-            },
-            child: Container(
-              alignment: Alignment.center,
-              width: 25,
-              height: 25,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.grey.shade300),
-              child: const Text('-', style: TextStyle(fontSize: 18)),
-            ),
-          ),
-          // numero :
-          Text('$count', style: const TextStyle(fontSize: 18)),
-          // mas :
-          GestureDetector(
-            onTap: () {
-              setState(() {
-                count++;
-              });
-            },
-            child: Container(
-              alignment: Alignment.center,
-              width: 25,
-              height: 25,
-              decoration: BoxDecoration(
-                  shape: BoxShape.circle, color: Colors.grey.shade300),
-              child: const Text('+', style: TextStyle(fontSize: 18)),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
 void doNothing(BuildContext context) {
   
 }

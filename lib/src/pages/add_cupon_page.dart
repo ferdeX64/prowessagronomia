@@ -71,32 +71,36 @@ class _AddCuponPageState extends State<AddCuponPage> {
                     ],
                   ),
                 ),
-                Container(
-                  height: size.width / 8,
-                  width: size.width / 1.25,
-                  alignment: Alignment.center,
-                  padding: EdgeInsets.only(right: size.width / 30),
-                  decoration: BoxDecoration(
-                    color: Colors.black.withOpacity(.1),
-                    borderRadius: BorderRadius.circular(20),
-                  ),
-                  child: const TextField(
-                    style: TextStyle(
-                      color: Colors.black,
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 0, 0, 15),
+                  child: Container(
+                    height: size.width / 8,
+                    width: size.width / 1.25,
+                    //margin: EdgeInsetsGeometry.infinity,//cambio
+                    alignment: Alignment.center,
+                    padding: EdgeInsets.only(right: size.width / 30),
+                    decoration: BoxDecoration(
+                      color: Colors.black.withOpacity(.1),
+                      borderRadius: BorderRadius.circular(20),
                     ),
-                    keyboardType: TextInputType.text,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.account_circle_outlined,
+                    child: const TextField(
+                      style: TextStyle(
                         color: Colors.black,
                       ),
-                      border: InputBorder.none,
-                      hintMaxLines: 1,
-                      hintText: 'Titulo',
-                      hintStyle: TextStyle(
-                        fontSize: 14,
-                        color: Colors.black,
-                      ),        
+                      keyboardType: TextInputType.text,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.account_circle_outlined,
+                          color: Colors.black,
+                        ),
+                        border: InputBorder.none,
+                        hintMaxLines: 1,
+                        hintText: 'Titulo',
+                        hintStyle: TextStyle(
+                          fontSize: 14,
+                          color: Colors.black,
+                        ),        
+                      ),
                     ),
                   ),
                 ),

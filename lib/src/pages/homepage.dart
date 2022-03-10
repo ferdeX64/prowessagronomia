@@ -109,7 +109,7 @@ class _HomepageState extends State<Homepage> {
                 },
               ),
               const Center(
-                child: Text('Productos',
+                child: Text('Productos Populares',
                   style: TextStyle(
                     fontWeight: FontWeight.w500,
                     fontSize: 35,
